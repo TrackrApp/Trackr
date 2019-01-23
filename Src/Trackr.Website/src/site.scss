@@ -1,0 +1,29 @@
+.dark {
+  .mat-toolbar {
+    .mat-icon-button {
+      background: transparent;
+      color: #ffffff;
+    }
+
+    &.mat-toolbar-primary {
+      background: #2196f3;
+      color: #ffffff;
+    }
+  }
+
+  .mat-drawer-container {
+    background-color: #303030;
+
+    .mat-drawer {
+      background-color: #424242;
+
+      .mat-nav-list {
+        .mat-list-item {
+          a {
+           color: #8999a0;
+          }
+        }
+      }
+    }
+  }
+}

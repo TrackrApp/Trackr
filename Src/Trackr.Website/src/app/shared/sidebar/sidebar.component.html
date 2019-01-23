@@ -1,0 +1,8 @@
+<mat-nav-list>
+  <mat-list-item *ngFor="let item of menu.getItems()" routerLinkActive="selected">
+    <a [routerLink]="['/', item.url]">
+      <i class="fas fa-{{item.icon}}"></i>
+      <span>{{item.name}}</span>
+    </a>
+  </mat-list-item>
+</mat-nav-list>
