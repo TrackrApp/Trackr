@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { MatTableModule } from "@angular/material";
 import { StandingsComponent } from "./standings.component";
 
 @NgModule({
@@ -6,6 +7,7 @@ import { StandingsComponent } from "./standings.component";
     StandingsComponent,
   ],
   imports: [
+    MatTableModule
   ],
   providers: [],
   bootstrap: [StandingsComponent]
