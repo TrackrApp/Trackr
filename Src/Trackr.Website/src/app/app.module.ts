@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule } from "@angular/router";
+import { AboutModule } from "./about/about.module";
 import { AppComponent } from "./app.component";
 import { routes } from "./app.routes";
 import { HomeModule } from "./home/home.module";
@@ -22,6 +23,7 @@ import { StandingsModule } from "./standings/standings.module";
     SidebarModule,
     HomeModule,
     StandingsModule,
+    AboutModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
