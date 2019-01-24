@@ -22,10 +22,15 @@
     <mat-card *ngFor="let session of race.sessions" class="session-result">
       <h3>{{session.name}}</h3>
       <h5>
+        <span *ngIf="session.results.length === 0">Results aren't in yet.</span>
         <span *ngIf="session.results.length > 0"><i class="fa fa-trophy gold"></i> {{session.results[0].driver}}</span>
         <span *ngIf="session.results.length > 1"><i class="fa fa-trophy silver"></i> {{session.results[1].driver}}</span>
         <span *ngIf="session.results.length > 2"><i class="fa fa-trophy bronze"></i> {{session.results[2].driver}}</span>
       </h5>
+
+      <a [routerLink]="['/', 'championship', 'race', race.id, 'session', session.id]" class="mat-raised-button mat-primary"
+        *ngIf="session.results.length > 0">View results</a>
+      <a class="mat-raised-button mat-primary disabled" *ngIf="session.results.length === 0">View results</a>
     </mat-card>
   </div>
 </div>

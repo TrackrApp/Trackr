@@ -11,11 +11,19 @@ export class RaceComponent {
 
   constructor() {
     this.race = {
+      id: 1,
       name: "Grote prijs van Duiven",
-      location: "Duiven",
+      location: "Kartbaan Duiven",
       url: "https://www.kartbaanduiven.nl",
       sessions: [
         {
+          id: 3,
+          name: "Race",
+          sessionType: SessionType.Race,
+          results: []
+        },
+        {
+          id: 2,
           name: "Kwalificatie",
           sessionType: SessionType.Qualification,
           results: [
@@ -43,6 +51,7 @@ export class RaceComponent {
           ]
         },
         {
+          id: 1,
           name: "Training",
           sessionType: SessionType.Training,
           results: [
@@ -52,7 +61,14 @@ export class RaceComponent {
               time: "43.41",
               difference: "",
               laps: 5,
-            }
+            },
+            {
+              position: 2,
+              driver: "Arjan",
+              time: "45.59",
+              difference: "+2.18",
+              laps: 5,
+            },
           ]
         },
       ]

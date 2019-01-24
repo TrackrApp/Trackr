@@ -5,7 +5,7 @@
 
 .race-details {
   .race-img {
-    margin-top: -110px;
+    margin-top: -128px;
     margin-bottom: 20px;
 
     img {
@@ -29,6 +29,7 @@
 
   h5 {
     color: #99abb4;
+    display: inline-block;
   }
 
   .fa {
@@ -47,5 +48,10 @@
 
   span {
     margin-right: 10px;
+  }
+
+  a {
+    display: inline-block;
+    font-size: 14px;
   }
 }
