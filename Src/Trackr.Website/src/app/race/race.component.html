@@ -1,0 +1,31 @@
+<div class="row-wrap">
+
+  <mat-card class="race-details text-center">
+    <img class="mat-card-image" src="https://wrappixel.com/demos/angular-admin-templates/material-angular/dark/assets/images/background/profile-bg.jpg">
+    <mat-card-content>
+      <div class="race-img">
+        <img src="http://otkc.nl/assets/duiven.png" />
+      </div>
+      <h3>{{race.name}}</h3>
+      <h6>{{race.location}}</h6>
+      <mat-card-actions>
+        <a class="mat-raised-button mat-primary" href="{{race.url}}" target="_blank" *ngIf="race.url != 'null'">
+          <span class="mat-button-wrapper">Website</span>
+          <div class="mat-button-ripple mat-ripple" matripple=""></div>
+          <div class="mat-button-focus-overlay"></div>
+        </a>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="fxFlex">
+    <mat-card *ngFor="let session of race.sessions" class="session-result">
+      <h3>{{session.name}}</h3>
+      <h5>
+        <span *ngIf="session.results.length > 0"><i class="fa fa-trophy gold"></i> {{session.results[0].driver}}</span>
+        <span *ngIf="session.results.length > 1"><i class="fa fa-trophy silver"></i> {{session.results[1].driver}}</span>
+        <span *ngIf="session.results.length > 2"><i class="fa fa-trophy bronze"></i> {{session.results[2].driver}}</span>
+      </h5>
+    </mat-card>
+  </div>
+</div>

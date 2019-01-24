@@ -1,0 +1,51 @@
+.row-wrap {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.race-details {
+  .race-img {
+    margin-top: -110px;
+    margin-bottom: 20px;
+
+    img {
+      height: 128px;
+    }
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  h6 {
+    margin-top: 0;
+  }
+}
+
+.session-result {
+  h3 {
+    margin: 0;
+  }
+
+  h5 {
+    color: #99abb4;
+  }
+
+  .fa {
+    &.gold {
+      color: #ffd700;
+    }
+
+    &.silver {
+      color: #c0c0c0;
+    }
+
+    &.bronze {
+      color: #cd7f32;
+    }
+  }
+
+  span {
+    margin-right: 10px;
+  }
+}

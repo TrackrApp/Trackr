@@ -6,6 +6,7 @@ import { AboutModule } from "./about/about.module";
 import { AppComponent } from "./app.component";
 import { routes } from "./app.routes";
 import { HomeModule } from "./home/home.module";
+import { RaceModule } from "./race/race.module";
 import { RacesModule } from "./races/races.module";
 import { MaterialModule } from "./shared/material.module";
 import { NotFoundComponent } from "./shared/not-found/not-found.component";
@@ -24,6 +25,7 @@ import { StandingsModule } from "./standings/standings.module";
     SidebarModule,
     HomeModule,
     RacesModule,
+    RaceModule,
     StandingsModule,
     AboutModule,
     RouterModule.forRoot(routes)

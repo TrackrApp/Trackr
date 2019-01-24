@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
 import { RacesComponent } from "./races.component";
 
 @NgModule({
@@ -6,6 +7,7 @@ import { RacesComponent } from "./races.component";
     RacesComponent,
   ],
   imports: [
+    RouterModule
   ],
   providers: [],
   bootstrap: [RacesComponent]
