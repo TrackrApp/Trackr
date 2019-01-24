@@ -32,6 +32,11 @@
     }
   }
 
+  .row-wrap {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
   .mat-card {
     display: block;
     position: relative;

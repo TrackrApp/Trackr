@@ -1,0 +1,12 @@
+.about-text-wrapper {
+  flex-direction: column;
+
+  a {
+    color: #26c6da;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
