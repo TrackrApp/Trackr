@@ -19,8 +19,13 @@
 
       .mat-nav-list {
         .mat-list-item {
-          a {
-           color: #8999a0;
+          height: auto;
+
+          .mat-list-item-content {
+            display: block;
+            a {
+            color: #8999a0;
+            }
           }
         }
       }

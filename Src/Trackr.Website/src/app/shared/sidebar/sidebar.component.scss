@@ -2,9 +2,11 @@
   .mat-list-item {
     a {
       height: 45px;
+      margin-bottom: 10px;
       padding: 0 10px;
       align-items: center;
       display: flex;
+      flex-direction: row;
       font-size: 17px;
       white-space: nowrap;
       color: #8f999e;
@@ -14,10 +16,24 @@
       }
     }
 
-    &.selected {
+    &.selected a.root-item {
+      color: #fff;
+      background-color: #26c6da;
+      border-radius: 4px;
+    }
+
+    &.selected .sub-item-children a.selected {
+      background: transparent;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .sub-item-children {
+      margin-top: -15px;
+
       a {
-        color: #fff;
-        font-weight: 500;
+        padding-left: 20px;
+        margin-bottom: 0;
       }
     }
   }

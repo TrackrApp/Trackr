@@ -5,16 +5,21 @@ import { StandingsComponent } from "./standings/standings.component";
 
 export const routes: Routes = [
   {
-    path: "",
+    path: "home",
     component: HomeComponent
   },
   {
-    path: "races",
-    component: NotFoundComponent
-  },
-  {
-    path: "standings",
-    component: StandingsComponent
+    path: "championship",
+    children: [
+      {
+        path: "races",
+        component: NotFoundComponent
+      },
+      {
+        path: "standings",
+        component: StandingsComponent
+      }
+    ]
   },
   {
     path: "**",

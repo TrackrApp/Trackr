@@ -1,8 +1,27 @@
 <mat-nav-list>
   <mat-list-item *ngFor="let item of menu.getItems()" routerLinkActive="selected">
-    <a [routerLink]="['/', item.url]">
+    <!-- Root menu item. -->
+    <a [routerLink]="['/', item.url]" class="root-item" *ngIf="item.type === ''">
       <i class="fas fa-{{item.icon}}"></i>
       <span>{{item.name}}</span>
     </a>
+
+    <!-- Sub menu root. -->
+    <a class="root-item" *ngIf="item.type === 'sub'">
+      <i class="fas fa-{{item.icon}}"></i>
+      <span>{{item.name}}</span>
+      <span class="fxFlex"></span>
+      <i class="dropdown fas fa-angle-down"></i>
+    </a>
+
+    <mat-nav-list class="sub-item-children" *ngIf="item.type === 'sub'">
+      <!-- Sub menu item. -->
+      <mat-list-item *ngFor="let subItem of item.children" routerLinkActive="selected">
+        <a [routerLink]="['/', item.url, subItem.url]" routerLinkActive="selected">
+          <span>{{subItem.name}}</span>
+        </a>
+      </mat-list-item>
+    </mat-nav-list>
+
   </mat-list-item>
 </mat-nav-list>

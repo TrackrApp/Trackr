@@ -5,27 +5,42 @@ export interface MenuItem {
   type: string;
   icon: string;
   url: string;
+  children?: MenuItem[];
 }
 
 const menuItems: MenuItem[] = [
   {
     name: "Home",
-    type: "/",
+    type: "",
     icon: "home",
-    url: ""
+    url: "home"
   },
   {
-    name: "Races",
-    type: "",
-    icon: "flag",
-    url: "races"
-  },
-  {
-    name: "Standings",
-    type: "",
+    name: "Championship",
+    type: "sub",
     icon: "trophy",
-    url: "standings"
+    url: "championship",
+    children: [
+      {
+        name: "Races",
+        type: "",
+        icon: "",
+        url: "races"
+      },
+      {
+        name: "Standings",
+        type: "",
+        icon: "",
+        url: "standings"
+      }
+    ]
   },
+  {
+    name: "About",
+    type: "",
+    icon: "info-circle",
+    url: "about"
+  }
 ];
 
 @Injectable()
