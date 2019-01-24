@@ -12,3 +12,15 @@ body {
 .fxFlex {
   flex: 1 1 0%;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 6px;
+  right: 2px;
+  background-color: #aaaaaa;
+  border-radius: 6px
+}

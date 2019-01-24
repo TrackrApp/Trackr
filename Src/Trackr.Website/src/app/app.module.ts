@@ -6,6 +6,7 @@ import { AboutModule } from "./about/about.module";
 import { AppComponent } from "./app.component";
 import { routes } from "./app.routes";
 import { HomeModule } from "./home/home.module";
+import { RacesModule } from "./races/races.module";
 import { MaterialModule } from "./shared/material.module";
 import { NotFoundComponent } from "./shared/not-found/not-found.component";
 import { SidebarModule } from "./shared/sidebar/sidebar.module";
@@ -22,6 +23,7 @@ import { StandingsModule } from "./standings/standings.module";
     BrowserAnimationsModule,
     SidebarModule,
     HomeModule,
+    RacesModule,
     StandingsModule,
     AboutModule,
     RouterModule.forRoot(routes)
