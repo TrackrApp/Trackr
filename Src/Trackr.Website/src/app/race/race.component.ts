@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
+import { } from "googlemaps";
 import { Race } from "../shared/domain/race.interface";
 import { SessionType } from "../shared/domain/sessionType.interface";
 
@@ -26,7 +27,7 @@ export class RaceComponent {
         },
         {
           id: 2,
-          name: "Kwalificatie",
+          name: "Qualification",
           sessionType: SessionType.Qualification,
           startTime: new Date(2018, 11, 28, 19, 0, 0),
           results: [
