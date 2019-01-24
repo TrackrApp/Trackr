@@ -15,17 +15,20 @@ export class RaceComponent {
       name: "Grote prijs van Duiven",
       location: "Kartbaan Duiven",
       url: "https://www.kartbaanduiven.nl",
+      dateFrom: new Date(2018, 11, 28),
       sessions: [
         {
           id: 3,
           name: "Race",
           sessionType: SessionType.Race,
+          startTime: new Date(2018, 11, 28, 19, 36, 0),
           results: []
         },
         {
           id: 2,
           name: "Kwalificatie",
           sessionType: SessionType.Qualification,
+          startTime: new Date(2018, 11, 28, 19, 0, 0),
           results: [
             {
               position: 1,
@@ -54,6 +57,7 @@ export class RaceComponent {
           id: 1,
           name: "Training",
           sessionType: SessionType.Training,
+          startTime: new Date(2018, 11, 28, 18, 29, 0),
           results: [
             {
               position: 1,

@@ -5,5 +5,6 @@ export interface Session {
   id: number;
   name: string;
   sessionType: SessionType;
+  startTime: Date;
   results: Result[];
 }

@@ -5,5 +5,7 @@ export interface Race {
   name: string;
   location: string;
   url?: string;
+  dateFrom: Date;
+  dateTo?: Date;
   sessions: Session[];
 }

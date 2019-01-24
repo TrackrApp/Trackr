@@ -13,7 +13,7 @@
   }
 
   h6 {
-    margin-top: 0;
+    margin-top: 5px;
   }
 }
 
@@ -43,6 +43,12 @@
 
   span {
     margin-right: 10px;
+  }
+
+  .button-more {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
   }
 
   a {
