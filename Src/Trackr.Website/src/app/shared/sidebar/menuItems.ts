@@ -16,6 +16,20 @@ const menuItems: MenuItem[] = [
     url: "home"
   },
   {
+    name: "Dashboard",
+    type: "sub",
+    icon: "columns",
+    url: "dashboard",
+    children: [
+      {
+        name: "Overview",
+        type: "",
+        icon: "",
+        url: "championships"
+      }
+    ]
+  },
+  {
     name: "Championship",
     type: "sub",
     icon: "trophy",

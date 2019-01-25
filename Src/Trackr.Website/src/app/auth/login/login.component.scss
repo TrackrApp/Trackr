@@ -1,5 +1,5 @@
 .box-wrapper {
-  height: calc(100vh - 93px);
+  height: calc(100vh - 94px);
   display: flex;
   align-items: center;
 }
@@ -29,7 +29,6 @@
   a {
     color: #26c6da;
     text-decoration: none;
-    transition: 0.25s all ease;
 
     &.forgot {
       color: #6b6b6b;

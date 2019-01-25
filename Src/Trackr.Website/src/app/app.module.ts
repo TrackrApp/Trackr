@@ -9,15 +9,16 @@ import { AuthModule } from "./auth/auth.module";
 import { HomeModule } from "./home/home.module";
 import { RaceModule } from "./race/race.module";
 import { RacesModule } from "./races/races.module";
+import { HeaderComponent } from "./shared/header/header.component";
 import { MaterialModule } from "./shared/material.module";
 import { NotFoundComponent } from "./shared/not-found/not-found.component";
 import { SidebarModule } from "./shared/sidebar/sidebar.module";
-import { AppVersionService } from "./shared/version/version.service";
 import { StandingsModule } from "./standings/standings.module";
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     NotFoundComponent
   ],
   imports: [

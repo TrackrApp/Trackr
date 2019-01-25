@@ -74,6 +74,10 @@
     text-align: right;
   }
 
+  a {
+    transition: 0.25s all ease;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
   }
