@@ -5,6 +5,7 @@ import { RouterModule } from "@angular/router";
 import { AboutModule } from "./about/about.module";
 import { AppComponent } from "./app.component";
 import { routes } from "./app.routes";
+import { AuthModule } from "./auth/auth.module";
 import { HomeModule } from "./home/home.module";
 import { RaceModule } from "./race/race.module";
 import { RacesModule } from "./races/races.module";
@@ -24,6 +25,7 @@ import { StandingsModule } from "./standings/standings.module";
     BrowserAnimationsModule,
     SidebarModule,
     HomeModule,
+    AuthModule,
     RacesModule,
     RaceModule,
     StandingsModule,

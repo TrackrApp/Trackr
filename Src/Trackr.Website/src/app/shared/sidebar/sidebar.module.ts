@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { MatListModule } from "@angular/material";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
-import { Menu } from "./menu";
+import { MenuItems } from "./menuItems";
 import { SidebarComponent } from "./sidebar.component";
 
 @NgModule({
@@ -15,7 +15,7 @@ import { SidebarComponent } from "./sidebar.component";
     MatListModule
   ],
   providers: [,
-    Menu
+    MenuItems
   ],
   exports: [SidebarComponent]
 })

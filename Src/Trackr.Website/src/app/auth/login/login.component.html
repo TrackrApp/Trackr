@@ -1,0 +1,40 @@
+<div class="box-wrapper">
+  <div class="box">
+
+    <mat-card>
+      <mat-card-content>
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+          <div class="text-center">
+            <h4>Login</h4>
+          </div>
+
+          <div class="row-wrap">
+
+            <div class="fxFlex">
+              <mat-form-field appearance="standard">
+                <input matInput placeholder="john@doe.com" required />
+              </mat-form-field>
+            </div>
+
+            <div class="fxFlex">
+              <mat-form-field appearance="standard">
+                <input matInput type="password" placeholder="password" required />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="fxFlex text-right">
+            <a [routerLink]="['/', 'auth', 'forgot']">Forgot password?</a>
+          </div>
+
+          <div class="fxFlex">
+            <button mat-button type="submit" class="mat-raised-button mat-primary btn-block" [disabled]="!loginForm.form.valid">Login
+            </button>
+          </div>
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>

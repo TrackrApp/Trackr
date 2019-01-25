@@ -50,6 +50,11 @@
   .mat-raised-button {
     color: #ffffff;
 
+    &.btn-block {
+      display: block;
+      width: 100%;
+    }
+
     &.mat-primary {
       background-color: #2196f3;
     }

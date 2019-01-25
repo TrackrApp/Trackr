@@ -22,6 +22,12 @@ const menuItems: MenuItem[] = [
     url: "championship",
     children: [
       {
+        name: "Find",
+        type: "",
+        icon: "",
+        url: "find"
+      },
+      {
         name: "Races",
         type: "",
         icon: "",
@@ -44,7 +50,7 @@ const menuItems: MenuItem[] = [
 ];
 
 @Injectable()
-export class Menu {
+export class MenuItems {
   getItems(): MenuItem[] {
     return menuItems;
   }

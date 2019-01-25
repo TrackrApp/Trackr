@@ -1,5 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
-import { } from "googlemaps";
+import { Component } from "@angular/core";
 import { Race } from "../shared/domain/race.interface";
 import { SessionType } from "../shared/domain/sessionType.interface";
 

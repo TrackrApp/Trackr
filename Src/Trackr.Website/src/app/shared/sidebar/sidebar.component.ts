@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Menu } from "./menu";
+import { MenuItems } from "./menuItems";
 
 @Component({
   selector: "app-sidebar",
@@ -7,7 +7,7 @@ import { Menu } from "./menu";
   styleUrls: ["./sidebar.component.scss"]
 })
 export class SidebarComponent {
-  constructor(public menu: Menu) { }
+  constructor(public menu: MenuItems) { }
 
 }
 

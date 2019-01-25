@@ -1,0 +1,22 @@
+.box-wrapper {
+  height: calc(100vh - 93px);
+  display: flex;
+  align-items: center;
+}
+
+.box {
+  max-width: 400px;
+  min-width: 240px;
+  margin: 0 auto;
+  vertical-align: middle;
+
+  .mat-form-field {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .mat-button {
+    margin: 20px 0 20px 0;
+    line-height: 48px;
+  }
+}
