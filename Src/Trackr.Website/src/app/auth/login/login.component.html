@@ -24,12 +24,18 @@
           </div>
 
           <div class="fxFlex text-right">
-            <a [routerLink]="['/', 'auth', 'forgot']">Forgot password?</a>
+            <a [routerLink]="['/', 'auth', 'forgot']" class="forgot">Forgot password?</a>
           </div>
 
           <div class="fxFlex">
             <button mat-button type="submit" class="mat-raised-button mat-primary btn-block" [disabled]="!loginForm.form.valid">Login
             </button>
+          </div>
+
+          <div class="fxFlex text-center">
+            <span>
+              Don't have an account? <a [routerLink]="['/', 'auth', 'register']">Register</a>
+            </span>
           </div>
 
         </form>

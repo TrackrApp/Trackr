@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { AppVersionService } from "../version/version.service";
 import { MenuItems } from "./menuItems";
 
 @Component({
@@ -7,7 +8,11 @@ import { MenuItems } from "./menuItems";
   styleUrls: ["./sidebar.component.scss"]
 })
 export class SidebarComponent {
-  constructor(public menu: MenuItems) { }
+  public version: string = this.appVersionService.getVersion();
+
+  constructor(
+    public menu: MenuItems,
+    private appVersionService: AppVersionService) { }
 
 }
 

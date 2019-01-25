@@ -1,5 +1,6 @@
 import { MediaMatcher } from "@angular/cdk/layout";
 import { ChangeDetectorRef, Component, OnDestroy } from "@angular/core";
+import { AppVersionService } from "./shared/version/version.service";
 
 @Component({
   selector: "app-root",
@@ -7,11 +8,13 @@ import { ChangeDetectorRef, Component, OnDestroy } from "@angular/core";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnDestroy {
-  mobileQuery: MediaQueryList;
+  public mobileQuery: MediaQueryList;
   public sidebarOpened: boolean;
+
   private _mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+
     this.mobileQuery = media.matchMedia("(min-width: 768px");
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);

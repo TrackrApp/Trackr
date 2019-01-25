@@ -10,6 +10,10 @@
   margin: 0 auto;
   vertical-align: middle;
 
+  .mat-card {
+    padding: 24px;
+  }
+
   .mat-form-field {
     width: 100%;
     display: inline-block;
@@ -18,5 +22,21 @@
   .mat-button {
     margin: 20px 0 20px 0;
     line-height: 48px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  a {
+    color: #26c6da;
+    text-decoration: none;
+    transition: 0.25s all ease;
+
+    &.forgot {
+      color: #6b6b6b;
+
+     &:hover {
+       color: #26c6da;
+     }
+    }
   }
 }

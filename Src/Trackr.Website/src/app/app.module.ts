@@ -12,6 +12,7 @@ import { RacesModule } from "./races/races.module";
 import { MaterialModule } from "./shared/material.module";
 import { NotFoundComponent } from "./shared/not-found/not-found.component";
 import { SidebarModule } from "./shared/sidebar/sidebar.module";
+import { AppVersionService } from "./shared/version/version.service";
 import { StandingsModule } from "./standings/standings.module";
 
 @NgModule({
@@ -32,7 +33,8 @@ import { StandingsModule } from "./standings/standings.module";
     AboutModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
