@@ -30,26 +30,26 @@ const menuItems: MenuItem[] = [
     ]
   },
   {
+    name: "Search",
+    type: "",
+    icon: "search",
+    url: "search",
+  },
+  {
     name: "Championship",
     type: "sub",
     icon: "trophy",
     url: "championship",
     children: [
       {
-        name: "Find",
-        type: "",
-        icon: "",
-        url: "find"
-      },
-      {
         name: "Races",
-        type: "",
+        type: "id",
         icon: "",
         url: "races"
       },
       {
         name: "Standings",
-        type: "",
+        type: "id",
         icon: "",
         url: "standings"
       }

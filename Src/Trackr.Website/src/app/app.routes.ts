@@ -21,6 +21,15 @@ export const routes: Routes = [
     path: "championship",
     children: [
       {
+        path: "find",
+        component: NotFoundComponent
+      }
+    ]
+  },
+  {
+    path: "championship/:id",
+    children: [
+      {
         path: "races",
         component: RacesComponent
       },

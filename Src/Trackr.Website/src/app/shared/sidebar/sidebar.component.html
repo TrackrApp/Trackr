@@ -17,7 +17,11 @@
     <mat-nav-list class="sub-item-children" *ngIf="item.type === 'sub'">
       <!-- Sub menu item. -->
       <mat-list-item *ngFor="let subItem of item.children" routerLinkActive="selected">
-        <a [routerLink]="['/', item.url, subItem.url]" routerLinkActive="selected">
+        <a [routerLink]="['/', item.url, subItem.url]" routerLinkActive="selected" *ngIf="subItem.type === ''">
+          <span>{{subItem.name}}</span>
+        </a>
+
+        <a [routerLink]="['/', item.url, '1', subItem.url]" routerLinkActive="selected" *ngIf="subItem.type === 'id'">
           <span>{{subItem.name}}</span>
         </a>
       </mat-list-item>
