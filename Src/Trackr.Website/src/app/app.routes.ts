@@ -4,6 +4,7 @@ import { LoginComponent } from "./auth/login/login.component";
 import { HomeComponent } from "./home/home.component";
 import { RaceComponent } from "./race/race.component";
 import { RacesComponent } from "./races/races.component";
+import { SearchComponent } from "./search/search.component";
 import { NotFoundComponent } from "./shared/not-found/not-found.component";
 import { StandingsComponent } from "./standings/standings.component";
 
@@ -18,23 +19,22 @@ export const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: "championship",
-    children: [
-      {
-        path: "find",
-        component: NotFoundComponent
-      }
-    ]
+    path: "search",
+    component: SearchComponent
   },
   {
-    path: "championship/:id",
+    path: "championship/:cId",
     children: [
+      {
+        path: "overview",
+        component: NotFoundComponent
+      },
       {
         path: "races",
         component: RacesComponent
       },
       {
-        path: "race/:id",
+        path: "race/:rId",
         component: RaceComponent
       },
       {

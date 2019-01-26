@@ -13,7 +13,6 @@ export class SidebarComponent {
   constructor(
     public menu: MenuItems,
     private appVersionService: AppVersionService) { }
-
 }
 
 

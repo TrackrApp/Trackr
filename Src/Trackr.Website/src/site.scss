@@ -1,3 +1,6 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
 .dark {
   .mat-toolbar {
     .mat-icon-button {
@@ -87,8 +90,12 @@
     line-height: 30px;
   }
 
+  h4 {
+    font-size: 18px;
+  }
+
   h5 {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 18px;
   }
 

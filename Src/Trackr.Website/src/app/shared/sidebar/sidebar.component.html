@@ -21,7 +21,7 @@
           <span>{{subItem.name}}</span>
         </a>
 
-        <a [routerLink]="['/', item.url, '1', subItem.url]" routerLinkActive="selected" *ngIf="subItem.type === 'id'">
+        <a [routerLink]="['/', item.url, 1, subItem.url]" routerLinkActive="selected" *ngIf="subItem.type === 'id'">
           <span>{{subItem.name}}</span>
         </a>
       </mat-list-item>

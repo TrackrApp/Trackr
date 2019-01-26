@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 export interface MenuItem {
   name: string;
   type: string;
+  idVal?: string;
   icon: string;
   url: string;
   children?: MenuItem[];
@@ -41,6 +42,13 @@ const menuItems: MenuItem[] = [
     icon: "trophy",
     url: "championship",
     children: [
+      {
+        name: "Overview",
+        type: "id",
+        idVal: "cId",
+        icon: "",
+        url: "overview"
+      },
       {
         name: "Races",
         type: "id",

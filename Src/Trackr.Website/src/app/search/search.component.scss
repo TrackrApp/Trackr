@@ -1,0 +1,36 @@
+.search-header {
+  width: 100%;
+
+
+  /deep/ .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+
+  /deep/ .mat-form-field-flex {
+    padding-top: 0;
+  }
+
+  .mat-form-field, input {
+    width: 100%;
+  }
+}
+
+.search-results {
+  display: flex;
+
+  .mat-card {
+    flex: 50%;
+
+    h3 {
+      margin: 0;
+    }
+
+    .championship-detail {
+      align-items: center;
+
+      h5 {
+        color: #99abb4;
+      }
+    }
+  }
+}

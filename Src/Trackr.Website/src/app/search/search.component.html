@@ -1,0 +1,29 @@
+<div class="row-wrap">
+  <mat-card class="search-header">
+    <mat-form-field appearance="standard">
+      <mat-label>Type your search query..</mat-label>
+      <input matInput placeholder="Start typing to search, e.g. OTKC" name="search" #search />
+    </mat-form-field>
+  </mat-card>
+</div>
+
+<div class="search-results">
+  <mat-card *ngFor="let championship of searchResults">
+    <mat-card-content>
+      <h3>{{championship.name}}</h3>
+      <div class="row-wrap championship-detail">
+        <div class="fxFlex-50">
+          <h5>
+            <span *ngIf="championship.races == null || championship.races.length === 0">No races yet.</span>
+            <span *ngIf="championship.races?.length === 1">{{championship.races.length}} race.</span>
+            <span *ngIf="championship.races?.length > 1">{{championship.races.length}} races.</span>
+          </h5>
+        </div>
+        <div class="fxFlex-50 text-right">
+          <a [routerLink]="['/', 'championship', championship.id, 'overview']" class="mat-raised-button mat-primary">View
+            championship</a>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

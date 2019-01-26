@@ -9,6 +9,7 @@ import { AuthModule } from "./auth/auth.module";
 import { HomeModule } from "./home/home.module";
 import { RaceModule } from "./race/race.module";
 import { RacesModule } from "./races/races.module";
+import { SearchModule } from "./search/search.module";
 import { HeaderComponent } from "./shared/header/header.component";
 import { MaterialModule } from "./shared/material.module";
 import { NotFoundComponent } from "./shared/not-found/not-found.component";
@@ -27,6 +28,7 @@ import { StandingsModule } from "./standings/standings.module";
     BrowserAnimationsModule,
     SidebarModule,
     HomeModule,
+    SearchModule,
     AuthModule,
     RacesModule,
     RaceModule,
