@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { MatCardModule, MatInputModule } from "@angular/material";
 import { RouterModule } from "@angular/router";
 import { SearchComponent } from "./search.component";
+import { SearchService } from "./search.service";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { SearchComponent } from "./search.component";
     MatInputModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    SearchService
+  ],
   bootstrap: [SearchComponent]
 })
 export class SearchModule { }

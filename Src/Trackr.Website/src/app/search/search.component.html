@@ -2,7 +2,8 @@
   <mat-card class="search-header">
     <mat-form-field appearance="standard">
       <mat-label>Type your search query..</mat-label>
-      <input matInput placeholder="Start typing to search, e.g. OTKC" name="search" #search />
+      <input matInput placeholder="Start typing to search, e.g. OTKC" name="search" minlength="4" autocomplete="off"
+        #search (keyup)="searchTerm.next(search.value)" />
     </mat-form-field>
   </mat-card>
 </div>
