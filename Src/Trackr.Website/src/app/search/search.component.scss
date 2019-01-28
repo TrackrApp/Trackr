@@ -19,18 +19,33 @@
   display: flex;
   flex-direction: row;
 
-  .mat-card {
-    flex: 0 0 calc(50% - 62px);
+  app-spinner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
-    h3 {
-      margin: 0;
-    }
+  .empty {
+    width: 100%;
+  }
 
-    .championship-detail {
-      align-items: center;
+  .list {
+    width: 100%;
+    display: flex;
 
-      h5 {
-        color: #99abb4;
+    .mat-card {
+      flex: 0 0 calc(50% - 62px);
+
+      h3 {
+        margin: 0;
+      }
+
+      .championship-detail {
+        align-items: center;
+
+        h5 {
+          color: #99abb4;
+        }
       }
     }
   }

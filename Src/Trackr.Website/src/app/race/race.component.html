@@ -34,7 +34,7 @@
           </h5>
         </div>
         <div class="fxFlex-50 button-more text-right">
-          <a [routerLink]="['/', 'championship', 'race', race.id, 'session', session.id]" class="mat-raised-button mat-primary"
+          <a [routerLink]="['/', 'championship', championshipId, 'race', race.id, 'session', session.id]" class="mat-raised-button mat-primary"
             *ngIf="session.results.length > 0">View results</a>
           <a class="mat-raised-button mat-primary disabled" *ngIf="session.results.length === 0">View results</a>
         </div>

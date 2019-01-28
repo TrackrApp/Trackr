@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { Race } from "../shared/domain/race.interface";
 import { SessionType } from "../shared/domain/sessionType.interface";
 
@@ -6,10 +7,11 @@ import { SessionType } from "../shared/domain/sessionType.interface";
   templateUrl: "./race.component.html",
   styleUrls: ["race.component.scss"]
 })
-export class RaceComponent {
+export class RaceComponent implements OnInit {
+  public championshipId: number;
   public race: Race;
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
     this.race = {
       id: 1,
       name: "Grote prijs van Duiven",
@@ -77,5 +79,13 @@ export class RaceComponent {
         },
       ]
     };
+  }
+
+  ngOnInit() {
+    // Get the Championship ID from the URL and save it locally.
+    // This is used in the component HTML to link to Sessions.
+    this.route.params.subscribe(params => {
+      this.championshipId = params["cId"];
+    });
   }
 }

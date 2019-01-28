@@ -9,22 +9,32 @@
 </div>
 
 <div class="search-results">
-  <mat-card *ngFor="let championship of searchResults">
-    <mat-card-content>
-      <h3>{{championship.name}}</h3>
-      <div class="row-wrap championship-detail">
-        <div class="fxFlex-50">
-          <h5>
-            <span *ngIf="championship.races == null || championship.races.length === 0">No races yet.</span>
-            <span *ngIf="championship.races?.length === 1">{{championship.races.length}} race.</span>
-            <span *ngIf="championship.races?.length > 1">{{championship.races.length}} races.</span>
-          </h5>
+  <!-- Spinner which is shown when the app is busy retrieving data. -->
+  <app-spinner *ngIf="isSearching"></app-spinner>
+
+  <!-- Message shown when result count is 0. -->
+  <h5 *ngIf="!isSearching && searchResults != null && searchResults.length === 0" class="empty text-center">No
+    championships found for this query.</h5>
+
+  <!-- Result container, when result count > 0. -->
+  <div *ngIf="!isSearching && searchResults != null && searchResults.length > 0" class="list">
+    <mat-card *ngFor="let championship of searchResults">
+      <mat-card-content>
+        <h3>{{championship.name}}</h3>
+        <div class="row-wrap championship-detail">
+          <div class="fxFlex-50">
+            <h5>
+              <span *ngIf="championship.races == null || championship.races.length === 0">No races yet.</span>
+              <span *ngIf="championship.races?.length === 1">{{championship.races.length}} race.</span>
+              <span *ngIf="championship.races?.length > 1">{{championship.races.length}} races.</span>
+            </h5>
+          </div>
+          <div class="fxFlex-50 text-right">
+            <a [routerLink]="['/', 'championship', championship.id, 'overview']" class="mat-raised-button mat-primary">View
+              championship</a>
+          </div>
         </div>
-        <div class="fxFlex-50 text-right">
-          <a [routerLink]="['/', 'championship', championship.id, 'overview']" class="mat-raised-button mat-primary">View
-            championship</a>
-        </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
