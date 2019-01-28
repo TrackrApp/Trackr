@@ -16,20 +16,21 @@ const menuItems: MenuItem[] = [
     icon: "home",
     url: "home"
   },
-  {
-    name: "Dashboard",
-    type: "sub",
-    icon: "columns",
-    url: "dashboard",
-    children: [
-      {
-        name: "Overview",
-        type: "",
-        icon: "",
-        url: "championships"
-      }
-    ]
-  },
+  // Auth will not be implemented in v1, so disable until then.
+  // {
+  //   name: "Dashboard",
+  //   type: "sub",
+  //   icon: "columns",
+  //   url: "dashboard",
+  //   children: [
+  //     {
+  //       name: "Overview",
+  //       type: "",
+  //       icon: "",
+  //       url: "championships"
+  //     }
+  //   ]
+  // },
   {
     name: "Search",
     type: "",

@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { ChampionshipOverview } from "../shared/domain/championshipOverview.interface";
+import { map } from "rxjs/operators";
 import { SessionType } from "../shared/domain/sessionType.interface";
+import { ChampionshipService } from "./championship.service";
+import { ChampionshipOverview } from "./domain/championshipOverview.interface";
 
 @Component({
   templateUrl: "./championship.component.html",
@@ -14,71 +16,18 @@ export class ChampionshipComponent implements OnInit {
   public raceColumns = ["position", "name", "time", "laps"];
   public standingColumns = ["position", "name", "points"];
 
-  constructor(private route: ActivatedRoute) {
-    this.championship = {
-      id: 1,
-      name: "OTKC",
-      description: "De officiele TimTim Kart Cup.",
-      standings: [
-        {
-          position: 1,
-          driver: "Arjan",
-          difference: "43",
-          laps: 0,
-          time: "",
-        },
-        {
-          position: 2,
-          driver: "Youp",
-          difference: "43",
-          laps: 0,
-          time: "",
-        },
-        {
-          position: 3,
-          driver: "Wilbert",
-          difference: "25",
-          laps: 0,
-          time: "",
-        },
-      ],
-      lastRaceResult: {
-        id: 8,
-        name: "Race",
-        sessionType: SessionType.Race,
-        startTime: new Date(2018, 11, 24, 19, 0, 0),
-        results: [
-          {
-            position: 1,
-            driver: "Arjan",
-            time: "43.09",
-            difference: "",
-            laps: 12
-          },
-          {
-            position: 2,
-            driver: "Youp",
-            time: "43.23",
-            difference: "+0.14",
-            laps: 12
-          },
-          {
-            position: 3,
-            driver: "Wilbert",
-            time: "44.60",
-            difference: "+1.51",
-            laps: 11
-          }
-        ]
-      }
-    };
-  }
+  constructor(
+    private championshipService: ChampionshipService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
-    // Get the Championship ID from the URL and save it locally.
-    // This is used in the component HTML to link to Sessions.
     this.route.params.subscribe(params => {
+      // Get the Championship ID from the URL and save it locally.
       this.championshipId = params["cId"];
+
+      // Call the service to retrieve the data from the API.
+      this.championship = this.championshipService.getChampionship(this.championshipId);
     });
   }
 }

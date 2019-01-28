@@ -1,4 +1,4 @@
-import { HttpClientModule } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -12,6 +12,7 @@ import { HomeModule } from "./home/home.module";
 import { RaceModule } from "./race/race.module";
 import { RacesModule } from "./races/races.module";
 import { SearchModule } from "./search/search.module";
+import { ApiEndpointPrefixer } from "./shared/api-endpoint-prefixer/api-endpoint-prefixer.service";
 import { HeaderComponent } from "./shared/header/header.component";
 import { MaterialModule } from "./shared/material.module";
 import { NotFoundComponent } from "./shared/not-found/not-found.component";
@@ -41,6 +42,11 @@ import { StandingsModule } from "./standings/standings.module";
     RouterModule.forRoot(routes)
   ],
   providers: [
+    [{
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiEndpointPrefixer,
+      multi: true
+    }]
   ],
   bootstrap: [AppComponent]
 })

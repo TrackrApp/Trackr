@@ -44,15 +44,16 @@ export const routes: Routes = [
       }
     ]
   },
-  {
-    path: "auth",
-    children: [
-      {
-        path: "login",
-        component: LoginComponent
-      }
-    ]
-  },
+  // Auth will not be implemented in v1, so disable until then.
+  // {
+  //   path: "auth",
+  //   children: [
+  //     {
+  //       path: "login",
+  //       component: LoginComponent
+  //     }
+  //   ]
+  // },
   {
     path: "about",
     component: AboutComponent

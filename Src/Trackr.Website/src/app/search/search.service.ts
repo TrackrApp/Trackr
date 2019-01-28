@@ -6,7 +6,7 @@ import { debounceTime, distinctUntilChanged, switchMap } from "rxjs/operators";
 @Injectable()
 export class SearchService {
   // private baseUrl = "https://localhost:44343/championship/v1/find?query=";
-  private baseUrl = "https://ws20trackr-api-o.azurewebsites.net/championship/v1/find?query=";
+  private baseUrl = "championship/v1/find?query=";
 
   constructor(private httpClient: HttpClient) { }
 
