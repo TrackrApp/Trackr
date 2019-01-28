@@ -9,7 +9,7 @@ Trackr contains the following features.
 As an anonymous user you can:
 - View championships, races, sessions and results.
 
-As an admin you can:
+As a registered user you can:
 - Create championships.
 - Add races to a championship.
 - Add sessions to a race.
