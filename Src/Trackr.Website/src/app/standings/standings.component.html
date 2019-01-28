@@ -1,42 +1,46 @@
-<h1>Standings</h1>
+<mat-card>
+  <h1>Standings</h1>
 
-<mat-table [dataSource]="standings">
+  <span>The table below shows the current standings of the championship.</span>
 
-  <!-- Position column. -->
-  <ng-container matColumnDef="position">
-    <mat-header-cell *matHeaderCellDef><abbr title="Position">Pos</abbr></mat-header-cell>
-    <mat-cell *matCellDef="let driver">
-      <span>{{driver.position}}</span>
-    </mat-cell>
-  </ng-container>
+  <mat-table [dataSource]="standings">
 
-  <!-- Name column. -->
-  <ng-container matColumnDef="name">
-    <mat-header-cell *matHeaderCellDef>Driver</mat-header-cell>
-    <mat-cell *matCellDef="let driver">
-      <span>{{driver.name}}</span>
-    </mat-cell>
-  </ng-container>
+    <!-- Position column. -->
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef><abbr title="Position">Pos</abbr></mat-header-cell>
+      <mat-cell *matCellDef="let driver">
+        <span>{{driver.position}}</span>
+      </mat-cell>
+    </ng-container>
 
-  <!-- Points column. -->
-  <ng-container matColumnDef="points">
-    <mat-header-cell *matHeaderCellDef><abbr title="Points">Pts</abbr></mat-header-cell>
-    <mat-cell *matCellDef="let driver">
-      <span>{{driver.points}}</span>
-    </mat-cell>
-  </ng-container>
+    <!-- Name column. -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Driver</mat-header-cell>
+      <mat-cell *matCellDef="let driver">
+        <span>{{driver.name}}</span>
+      </mat-cell>
+    </ng-container>
 
-  <!-- Changes column. -->
-  <ng-container matColumnDef="changes">
-    <mat-header-cell *matHeaderCellDef><abbr title="Changes compared to last race">+ / -</abbr></mat-header-cell>
-    <mat-cell *matCellDef="let driver">
-      <span>{{driver.changes}}</span>
-    </mat-cell>
-  </ng-container>
+    <!-- Points column. -->
+    <ng-container matColumnDef="points">
+      <mat-header-cell *matHeaderCellDef><abbr title="Points">Pts</abbr></mat-header-cell>
+      <mat-cell *matCellDef="let driver">
+        <span>{{driver.points}}</span>
+      </mat-cell>
+    </ng-container>
 
-  <!-- Header row definition. -->
-  <mat-header-row *matHeaderRowDef="standingColumns"></mat-header-row>
+    <!-- Changes column. -->
+    <ng-container matColumnDef="changes">
+      <mat-header-cell *matHeaderCellDef><abbr title="Changes compared to last race">+ / -</abbr></mat-header-cell>
+      <mat-cell *matCellDef="let driver">
+        <span>{{driver.changes}}</span>
+      </mat-cell>
+    </ng-container>
 
-  <!--Content row definition. -->
-  <mat-row *matRowDef="let row; columns: standingColumns;"></mat-row>
-</mat-table>
+    <!-- Header row definition. -->
+    <mat-header-row *matHeaderRowDef="standingColumns"></mat-header-row>
+
+    <!--Content row definition. -->
+    <mat-row *matRowDef="let row; columns: standingColumns;"></mat-row>
+  </mat-table>
+</mat-card>

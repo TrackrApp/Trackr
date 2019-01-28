@@ -1,6 +1,7 @@
 import { Routes } from "@angular/router";
 import { AboutComponent } from "./about/about.component";
 import { LoginComponent } from "./auth/login/login.component";
+import { ChampionshipComponent } from "./championship/championship.component";
 import { HomeComponent } from "./home/home.component";
 import { RaceComponent } from "./race/race.component";
 import { RacesComponent } from "./races/races.component";
@@ -27,7 +28,7 @@ export const routes: Routes = [
     children: [
       {
         path: "overview",
-        component: NotFoundComponent
+        component: ChampionshipComponent
       },
       {
         path: "races",

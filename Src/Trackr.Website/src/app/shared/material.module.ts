@@ -26,6 +26,7 @@ import {
   MatSnackBarModule,
   MatSortModule,
   MatStepperModule,
+  MatTableModule,
   MatTooltipModule,
 } from "@angular/material";
 
@@ -50,6 +51,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     MatExpansionModule,
     MatGridListModule,
     MatIconModule,
+    MatTableModule,
     MatInputModule,
     MatListModule,
     MatMenuModule,
