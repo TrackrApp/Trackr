@@ -17,9 +17,10 @@
 
 .search-results {
   display: flex;
+  flex-direction: row;
 
   .mat-card {
-    flex: 50%;
+    flex: 0 0 calc(50% - 62px);
 
     h3 {
       margin: 0;
@@ -32,5 +33,11 @@
         color: #99abb4;
       }
     }
+  }
+}
+
+@media (max-width: 767px) {
+  .search-results {
+    flex-direction: column;
   }
 }

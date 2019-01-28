@@ -16,6 +16,8 @@ export class SearchService {
    * @param terms The terms to search for.
    */
   public search(terms: Observable<string>) {
+    // Wait 400ms, check wether the current value is differen then the last one.
+    // If the conditions above are met, start searching.
     return terms
       .pipe(debounceTime(400))
       .pipe(distinctUntilChanged())

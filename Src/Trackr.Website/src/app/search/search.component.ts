@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from "@angular/core";
+import { Component } from "@angular/core";
 import { Subject } from "rxjs";
 import { Championship } from "../shared/domain/championship.interface";
 import { SearchService } from "./search.service";
@@ -7,9 +7,7 @@ import { SearchService } from "./search.service";
   templateUrl: "./search.component.html",
   styleUrls: ["search.component.scss"]
 })
-export class SearchComponent implements AfterViewInit {
-  @ViewChild("search") private searchElRef: ElementRef;
-
+export class SearchComponent {
   public searchTerm = new Subject<string>();
   public searchResults: Championship[];
 
@@ -22,9 +20,5 @@ export class SearchComponent implements AfterViewInit {
         // Set the results locally, so the UI will be updated after data is received.
         this.searchResults = results;
       });
-  }
-
-  public ngAfterViewInit(): void {
-    this.searchElRef.nativeElement.focus();
   }
 }
