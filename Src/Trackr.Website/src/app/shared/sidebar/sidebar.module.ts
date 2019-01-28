@@ -15,7 +15,7 @@ import { SidebarComponent } from "./sidebar.component";
     RouterModule,
     MatListModule
   ],
-  providers: [,
+  providers: [
     MenuItems,
     AppVersionService
   ],
