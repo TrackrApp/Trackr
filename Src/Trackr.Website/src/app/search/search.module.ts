@@ -1,22 +1,21 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { MatCardModule, MatInputModule } from "@angular/material";
 import { RouterModule } from "@angular/router";
-import { SpinnerComponent } from "../shared/spinner/spinner.component";
+import { MaterialModule } from "../shared/material.module";
+import { SharedModule } from "../shared/shared.module";
 import { SearchComponent } from "./search.component";
 import { SearchService } from "./search.service";
 
 @NgModule({
   declarations: [
-    SpinnerComponent,
     SearchComponent,
   ],
   imports: [
     RouterModule,
     CommonModule,
-    MatCardModule,
-    MatInputModule,
+    MaterialModule,
+    SharedModule,
     FormsModule,
   ],
   providers: [

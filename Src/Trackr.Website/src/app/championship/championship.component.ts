@@ -27,7 +27,13 @@ export class ChampionshipComponent implements OnInit {
       this.championshipId = params["cId"];
 
       // Call the service to retrieve the data from the API.
-      this.championship = this.championshipService.getChampionship(this.championshipId);
+      this.championshipService.getChampionship(this.championshipId)
+        .then((result: ChampionshipOverview) => {
+          this.championship = result;
+        })
+        .catch((err: Error) => {
+          console.error(err);
+        });
     });
   }
 }

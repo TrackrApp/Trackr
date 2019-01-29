@@ -16,6 +16,7 @@ import { ApiEndpointPrefixer } from "./shared/api-endpoint-prefixer/api-endpoint
 import { HeaderComponent } from "./shared/header/header.component";
 import { MaterialModule } from "./shared/material.module";
 import { NotFoundComponent } from "./shared/not-found/not-found.component";
+import { SharedModule } from "./shared/shared.module";
 import { SidebarModule } from "./shared/sidebar/sidebar.module";
 import { StandingsModule } from "./standings/standings.module";
 
@@ -39,6 +40,7 @@ import { StandingsModule } from "./standings/standings.module";
     RaceModule,
     StandingsModule,
     AboutModule,
+    SharedModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
