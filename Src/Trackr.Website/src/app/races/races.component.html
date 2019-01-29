@@ -1,5 +1,37 @@
-<h1>Races</h1>
+<mat-card>
+  <h1>Races</h1>
 
-<span>View the races, and their individual results.</span>
+  <span>View the races, and their individual results.</span>
 
-<a routerLink="/championship/1/race/1">Race 1 resultaten.</a>
+</mat-card>
+
+<div class="races-results">
+  <!-- Spinner which is shown when the app is busy retrieving data. -->
+  <app-spinner *ngIf="races == null"></app-spinner>
+
+  <!-- Message shown when result count is 0. -->
+  <h5 *ngIf="races != null && races.length === 0" class="empty text-center">This championship has no races.</h5>
+
+  <!-- Result container, when result count > 0. -->
+  <div *ngIf="races != null && races.length > 0" class="list">
+    <mat-card *ngFor="let race of races">
+      <mat-card-content>
+        <h3>{{race.name}}</h3>
+        <h4>{{race.location}}</h4>
+        <div class="row-wrap race-detail">
+          <div class="fxFlex-50">
+            <h5>
+              <span *ngIf="race.sessions == null || race.sessions.length === 0">No sessions yet.</span>
+              <span *ngIf="race.sessions.length === 1">{{race.sessions.length}} session.</span>
+              <span *ngIf="race.sessions.length > 1">{{race.sessions.length}} sessions.</span>
+            </h5>
+          </div>
+          <div class="fxFlex-50 text-right">
+            <a [routerLink]="['/', 'championship', championshipId, 'race', race.id]" class="mat-raised-button mat-primary">View
+              race</a>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

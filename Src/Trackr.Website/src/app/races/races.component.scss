@@ -1,0 +1,41 @@
+app-spinner {
+  display: flex;
+  justify-content: center;
+}
+
+.races-results {
+  display: flex;
+  flex-direction: row;
+
+  .list {
+    width: 100%;
+    display: flex;
+
+    .mat-card {
+      flex: 0 0 calc(50% - 62px);
+
+      h3 {
+        margin: 0;
+      }
+
+      h4 {
+        margin: 10px 0 0 0;
+        color: #99abb4;
+      }
+
+      .race-detail {
+        align-items: center;
+
+        h5 {
+          color: #99abb4;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .list {
+    flex-direction: column;
+  }
+}
