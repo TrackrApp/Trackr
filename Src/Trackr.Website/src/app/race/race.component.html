@@ -14,10 +14,9 @@
 
     <mat-card class="race-details text-center">
 
-      <!-- Google Maps, if address is given. -->
+      <!-- Show embedded Google Maps, if an address is given. -->
       <div class="mat-card-image" *ngIf="race.address != null">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2458.319212773275!2d5.995472315984078!3d51.96460498499136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7a3c4d1f208cf%3A0xd9fc81e3c00bc472!2sKartbaan+Duiven+BV!5e0!3m2!1sen!2snl!4v1548345436466"
-          frameborder="0" style="border:0" allowfullscreen></iframe>
+        <iframe [src]="race.address | addressToGmaps | safe" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
 
       <mat-card-content>
@@ -33,7 +32,13 @@
     </mat-card>
 
     <div class="fxFlex">
-      <mat-card *ngFor="let session of race.sessions" class="session-result">
+      <!-- Message to show when there aren't any sessions. -->
+      <mat-card *ngIf="race.sessions == null || race.sessions.length == 0" class="session-result">
+        <h5>There are no sessions (yet).</h5>
+      </mat-card>
+
+      <!-- Show session results. -->
+      <mat-card *ngIf="race.sessions != null && race.sessions.length > 0" ngFor="let session of race.sessions" class="session-result">
         <h3>{{session.name}}</h3>
         <div class="row-wrap">
           <div class="fxFlex-50">
