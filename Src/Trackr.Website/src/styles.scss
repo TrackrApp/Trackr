@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import "colors.scss";
 
 body {
   margin: 0;
-  background: #2d3d4a;
-  color: #67757c;
+  background: $pickled-bluewood;
+  color: $nevada-grey;
   font-family: "Poppins" ,sans-serif;
   font-weight: 300;
 }
@@ -25,6 +26,6 @@ body {
 ::-webkit-scrollbar-thumb {
   width: 6px;
   right: 2px;
-  background-color: #aaaaaa;
+  background-color: $silver-chalice;
   border-radius: 6px
 }

@@ -1,3 +1,5 @@
+@import "../../colors.scss";
+
 .race-details {
   iframe {
     width: 100%;
@@ -28,21 +30,21 @@
   }
 
   h5 {
-    color: #99abb4;
+    color: $gull-grey;
     display: inline-block;
   }
 
   .fa {
     &.gold {
-      color: #ffd700;
+      color: $gold;
     }
 
     &.silver {
-      color: #c0c0c0;
+      color: $silver;
     }
 
     &.bronze {
-      color: #cd7f32;
+      color: $brandy-punch;
     }
   }
 

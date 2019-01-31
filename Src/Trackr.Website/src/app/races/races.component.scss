@@ -1,3 +1,5 @@
+@import "../../colors.scss";
+
 app-spinner {
   display: flex;
   justify-content: center;
@@ -20,14 +22,14 @@ app-spinner {
 
       h4 {
         margin: 10px 0 0 0;
-        color: #99abb4;
+        color: $gull-grey;
       }
 
       .race-detail {
         align-items: center;
 
         h5 {
-          color: #99abb4;
+          color: $gull-grey;
         }
       }
     }

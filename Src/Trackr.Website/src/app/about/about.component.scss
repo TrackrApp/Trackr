@@ -1,8 +1,10 @@
+@import "../../colors.scss";
+
 .about-text-wrapper {
   flex-direction: column;
 
   a {
-    color: #2196f3;
+    color: $dodger-blue;
     text-decoration: none;
 
     &:hover {

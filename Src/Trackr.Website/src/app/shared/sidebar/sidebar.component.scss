@@ -1,3 +1,5 @@
+@import "../../../colors.scss";
+
 :host {
   height: 100%;
   display: flex;
@@ -16,7 +18,7 @@
       flex-direction: row;
       font-size: 17px;
       white-space: nowrap;
-      color: #8f999e;
+      color: $regent-grey;
 
       .fas {
         margin-right: 8px;
@@ -24,14 +26,14 @@
     }
 
     &.selected a.root-item {
-      color: #fff;
-      background-color: #2196f3;
+      color: $white;
+      background-color: $dodger-blue;
       border-radius: 4px;
     }
 
     &.selected .sub-item-children a.selected {
       background: transparent;
-      color: #fff;
+      color: $white;
       font-weight: 500;
     }
 
@@ -52,7 +54,7 @@
 
   a {
     padding: 0 16px;
-    color: #2196f3;
+    color: $dodger-blue;
     font-size: 18px;
   }
 }

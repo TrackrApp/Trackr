@@ -1,9 +1,11 @@
+@import "../../../colors.scss";
+
 :host {
   margin-left: auto;
 }
 
 a {
-  color: #ffffff;
+  color: $white;
   text-decoration: none;
 
   &:hover {

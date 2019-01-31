@@ -1,3 +1,4 @@
+@import "./colors.scss";
 @import '~@angular/material/theming';
 @include mat-core();
 
@@ -5,20 +6,20 @@
   .mat-toolbar {
     .mat-icon-button {
       background: transparent;
-      color: #ffffff;
+      color: $white;
     }
 
     &.mat-toolbar-primary {
-      background: #2196f3;
-      color: #ffffff;
+      background: $dodger-blue;
+      color: $white;
     }
   }
 
   .mat-drawer-container {
-    background-color: #303030;
+    background-color: $mineshaft-black;
 
     .mat-drawer {
-      background-color: #424242;
+      background-color: $tundora-grey;
 
       .mat-nav-list {
         .mat-list-item {
@@ -26,8 +27,9 @@
 
           .mat-list-item-content {
             display: block;
+
             a {
-            color: #8999a0;
+              color: $regent-grey;
             }
           }
         }
@@ -45,13 +47,13 @@
     position: relative;
     margin: 15px;
     border-radius: 4px;
-    background-color: #424242;
-    color: #ffffff;
+    background-color: $tundora-grey;
+    color: $white;
 
   }
 
   .mat-raised-button {
-    color: #ffffff;
+    color: $white;
 
     &.btn-block {
       display: block;
@@ -59,7 +61,7 @@
     }
 
     &.mat-primary {
-      background-color: #2196f3;
+      background-color: $dodger-blue;
     }
 
     &.disabled {
