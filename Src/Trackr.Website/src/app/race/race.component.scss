@@ -1,77 +1,85 @@
 @import "../../colors.scss";
 
-.header-image {
-  padding-bottom: 0;
-
-  img {
-    height: 250px;
-    margin-bottom: -4px;
-    object-fit: cover;
-    object-position: 50% 30%;
-  }
+app-spinner {
+  display: flex;
+  justify-content: center;
 }
 
-.race-details {
-  iframe {
-    width: 100%;
-    height: 100%;
-  }
-
-  .race-img {
-    margin-top: 0;
-    margin-bottom: 20px;
+.race-wrapper {
+  .header-image {
+    padding-bottom: 0;
 
     img {
-      height: 128px;
+      height: 250px;
+      margin-bottom: -4px;
+      object-fit: cover;
+      object-position: 50% 30%;
+      border-radius: 4px;
     }
   }
 
-  h3 {
-    margin: 0;
-  }
-
-  h6 {
-    margin-top: 5px;
-  }
-}
-
-.session-result {
-  h3 {
-    margin: 0;
-  }
-
-  h5 {
-    color: $gull-grey;
-    display: inline-block;
-  }
-
-  .fa {
-    &.gold {
-      color: $gold;
+  .race-details {
+    iframe {
+      width: 100%;
+      height: 100%;
     }
 
-    &.silver {
-      color: $silver;
+    .race-img {
+      margin-top: 0;
+      margin-bottom: 20px;
+
+      img {
+        height: 128px;
+      }
     }
 
-    &.bronze {
-      color: $brandy-punch;
+    h3 {
+      margin: 0;
+    }
+
+    h6 {
+      margin-top: 5px;
     }
   }
 
-  span {
-    margin-right: 10px;
-  }
+  .session-result {
+    h3 {
+      margin: 0;
+    }
 
-  .button-more {
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
-  }
+    h5 {
+      color: $gull-grey;
+      display: inline-block;
+    }
 
-  a {
-    display: inline-block;
-    font-size: 14px;
+    .fa {
+      &.gold {
+        color: $gold;
+      }
+
+      &.silver {
+        color: $silver;
+      }
+
+      &.bronze {
+        color: $brandy-punch;
+      }
+    }
+
+    span {
+      margin-right: 10px;
+    }
+
+    .button-more {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
+
+    a {
+      display: inline-block;
+      font-size: 14px;
+    }
   }
 }
 

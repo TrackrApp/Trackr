@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Race } from "../shared/domain/race.interface";
-import { SessionType } from "../shared/domain/sessionType.interface";
+import { RaceService } from "./race.service";
 
 @Component({
   templateUrl: "./race.component.html",
@@ -9,83 +9,93 @@ import { SessionType } from "../shared/domain/sessionType.interface";
 })
 export class RaceComponent implements OnInit {
   public championshipId: number;
+  public raceId: number;
   public race: Race;
 
-  constructor(private route: ActivatedRoute) {
-    this.race = {
-      id: 1,
-      name: "Grote prijs van Duiven",
-      location: "Kartbaan Duiven",
-      url: "https://www.kartbaanduiven.nl",
-      dateFrom: new Date(2018, 11, 28),
-      sessions: [
-        {
-          id: 3,
-          name: "Race",
-          sessionType: SessionType.Race,
-          startTime: new Date(2018, 11, 28, 19, 36, 0),
-          results: []
-        },
-        {
-          id: 2,
-          name: "Qualification",
-          sessionType: SessionType.Qualification,
-          startTime: new Date(2018, 11, 28, 19, 0, 0),
-          results: [
-            {
-              position: 1,
-              driver: "Arjan",
-              time: "43.09",
-              difference: "",
-              laps: 12
-            },
-            {
-              position: 2,
-              driver: "Youp",
-              time: "43.23",
-              difference: "+0.14",
-              laps: 12
-            },
-            {
-              position: 3,
-              driver: "Wilbert",
-              time: "44.60",
-              difference: "+1.51",
-              laps: 11
-            },
-          ]
-        },
-        {
-          id: 1,
-          name: "Training",
-          sessionType: SessionType.Training,
-          startTime: new Date(2018, 11, 28, 18, 29, 0),
-          results: [
-            {
-              position: 1,
-              driver: "Youp",
-              time: "43.41",
-              difference: "",
-              laps: 5,
-            },
-            {
-              position: 2,
-              driver: "Arjan",
-              time: "45.59",
-              difference: "+2.18",
-              laps: 5,
-            },
-          ]
-        },
-      ]
-    };
+  constructor(
+    private route: ActivatedRoute,
+    private raceService: RaceService) {
+
+    // this.race = {
+    //   id: 1,
+    //   name: "Grote prijs van Duiven",
+    //   location: "Kartbaan Duiven",
+    //   url: "https://www.kartbaanduiven.nl",
+    //   dateFrom: new Date(2018, 11, 28),
+    //   sessions: [
+    //     {
+    //       id: 3,
+    //       name: "Race",
+    //       sessionType: SessionType.Race,
+    //       startTime: new Date(2018, 11, 28, 19, 36, 0),
+    //       results: []
+    //     },
+    //     {
+    //       id: 2,
+    //       name: "Qualification",
+    //       sessionType: SessionType.Qualification,
+    //       startTime: new Date(2018, 11, 28, 19, 0, 0),
+    //       results: [
+    //         {
+    //           position: 1,
+    //           driver: "Arjan",
+    //           time: "43.09",
+    //           difference: "",
+    //           laps: 12
+    //         },
+    //         {
+    //           position: 2,
+    //           driver: "Youp",
+    //           time: "43.23",
+    //           difference: "+0.14",
+    //           laps: 12
+    //         },
+    //         {
+    //           position: 3,
+    //           driver: "Wilbert",
+    //           time: "44.60",
+    //           difference: "+1.51",
+    //           laps: 11
+    //         },
+    //       ]
+    //     },
+    //     {
+    //       id: 1,
+    //       name: "Training",
+    //       sessionType: SessionType.Training,
+    //       startTime: new Date(2018, 11, 28, 18, 29, 0),
+    //       results: [
+    //         {
+    //           position: 1,
+    //           driver: "Youp",
+    //           time: "43.41",
+    //           difference: "",
+    //           laps: 5,
+    //         },
+    //         {
+    //           position: 2,
+    //           driver: "Arjan",
+    //           time: "45.59",
+    //           difference: "+2.18",
+    //           laps: 5,
+    //         },
+    //       ]
+    //     },
+    //   ]
+    // };
   }
 
   ngOnInit() {
-    // Get the Championship ID from the URL and save it locally.
+    // Get the Championship and Race ID from the URL and save it locally.
     // This is used in the component HTML to link to Sessions.
     this.route.params.subscribe(params => {
       this.championshipId = params["cId"];
+      this.raceId = params["rId"];
+
+      this.raceService.getRace(this.raceId)
+        .then((result: Race) => {
+          this.race = result;
+        });
     });
   }
 }

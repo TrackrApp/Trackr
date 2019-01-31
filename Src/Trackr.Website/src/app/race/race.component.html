@@ -1,48 +1,59 @@
-<mat-card class="header-image">
-  <img mat-card-image src="http://otkc.nl/assets/otkc-ronde-2.jpg" />
-</mat-card>
+<!-- Spinner which is shown when the app is busy retrieving data. -->
+<app-spinner *ngIf="race == null"></app-spinner>
 
-<div class="row-wrap">
+<!-- UI to shown when the race data is loaded. -->
+<div class="race-wrapper" *ngIf="race != null">
 
-  <mat-card class="race-details text-center">
-    <div class="mat-card-image">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2458.319212773275!2d5.995472315984078!3d51.96460498499136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7a3c4d1f208cf%3A0xd9fc81e3c00bc472!2sKartbaan+Duiven+BV!5e0!3m2!1sen!2snl!4v1548345436466"
-        frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
-    <mat-card-content>
-      <div class="race-img">
-        <img src="http://otkc.nl/assets/duiven.png" />
-      </div>
-      <h3>{{race.name}}</h3>
-      <h6>{{race.location}} - {{race.dateFrom | date: "dd MMM yyyy"}}</h6>
-      <mat-card-actions>
-        <a class="mat-raised-button mat-primary" href="{{race.url}}" target="_blank" *ngIf="race.url != 'null'">
-          <span class="mat-button-wrapper">Website</span>
-          <div class="mat-button-ripple mat-ripple" matripple=""></div>
-          <div class="mat-button-focus-overlay"></div>
-        </a>
-      </mat-card-actions>
-    </mat-card-content>
+  <!-- Header image, if available. -->
+  <mat-card class="header-image" *ngIf="race.headerImage != null">
+    <img mat-card-image src="http://otkc.nl/assets/otkc-ronde-2.jpg" />
   </mat-card>
 
-  <div class="fxFlex">
-    <mat-card *ngFor="let session of race.sessions" class="session-result">
-      <h3>{{session.name}}</h3>
-      <div class="row-wrap">
-        <div class="fxFlex-50">
-          <h5>
-            <span *ngIf="session.results.length === 0">Results aren't in yet.</span>
-            <span *ngIf="session.results.length > 0"><i class="fa fa-trophy gold"></i> {{session.results[0].driver}}</span>
-            <span *ngIf="session.results.length > 1"><i class="fa fa-trophy silver"></i> {{session.results[1].driver}}</span>
-            <span *ngIf="session.results.length > 2"><i class="fa fa-trophy bronze"></i> {{session.results[2].driver}}</span>
-          </h5>
-        </div>
-        <div class="fxFlex-50 button-more text-right">
-          <a [routerLink]="['/', 'championship', championshipId, 'race', race.id, 'session', session.id]" class="mat-raised-button mat-primary"
-            *ngIf="session.results.length > 0">View results</a>
-          <a class="mat-raised-button mat-primary disabled" *ngIf="session.results.length === 0">View results</a>
-        </div>
+  <!-- Main race info. -->
+  <div class="row-wrap">
+
+    <mat-card class="race-details text-center">
+
+      <!-- Google Maps, if address is given. -->
+      <div class="mat-card-image" *ngIf="race.address != null">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2458.319212773275!2d5.995472315984078!3d51.96460498499136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7a3c4d1f208cf%3A0xd9fc81e3c00bc472!2sKartbaan+Duiven+BV!5e0!3m2!1sen!2snl!4v1548345436466"
+          frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
+
+      <mat-card-content>
+        <div class="race-img">
+          <img src="http://otkc.nl/assets/duiven.png" />
+        </div>
+        <h3>{{race.name}}</h3>
+        <h6>{{race.location}} - {{race.dateFrom | date: "dd MMM yyyy"}}</h6>
+        <mat-card-actions>
+          <a mat-raised-button color="primary" href="{{race.url}}" target="_blank" *ngIf="race.url != null">Website</a>
+        </mat-card-actions>
+      </mat-card-content>
     </mat-card>
+
+    <div class="fxFlex">
+      <mat-card *ngFor="let session of race.sessions" class="session-result">
+        <h3>{{session.name}}</h3>
+        <div class="row-wrap">
+          <div class="fxFlex-50">
+            <h5>
+              <span *ngIf="session.results.length === 0">Results aren't in yet.</span>
+              <span *ngIf="session.results.length > 0"><i class="fa fa-trophy gold"></i> {{session.results[0].driver}}</span>
+              <span *ngIf="session.results.length > 1"><i class="fa fa-trophy silver"></i>
+                {{session.results[1].driver}}</span>
+              <span *ngIf="session.results.length > 2"><i class="fa fa-trophy bronze"></i>
+                {{session.results[2].driver}}</span>
+            </h5>
+          </div>
+          <div class="fxFlex-50 button-more text-right">
+            <a [routerLink]="['/', 'championship', championshipId, 'race', race.id, 'session', session.id]"
+              mat-raised-button ripple color="primary" *ngIf="session.results.length > 0">View results</a>
+            <a mat-raised-button ripple color="primary" class="disabled" *ngIf="session.results.length === 0">View
+              results</a>
+          </div>
+        </div>
+      </mat-card>
+    </div>
   </div>
 </div>

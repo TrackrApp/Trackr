@@ -1,3 +1,5 @@
+@import "../../colors.scss";
+
 app-spinner {
   display: none;
 
@@ -16,6 +18,15 @@ app-spinner {
 
   .mat-card {
     flex: 1;
+
+    h5 {
+      color: $gull-grey;
+
+      small {
+        display: block;
+        margin-top: 15px;
+      }
+    }
 
     .mat-card-actions {
       margin-top: 15px;

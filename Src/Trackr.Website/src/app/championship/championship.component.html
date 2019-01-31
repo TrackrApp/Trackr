@@ -12,98 +12,115 @@
 
   <div class="content">
     <mat-card class="race">
-      <h3>Last session result ({{championship.lastResult.sessions[0].sessionType.toString() | lowercase }})</h3>
+      <h3>Last session result.</h3>
 
-      <mat-table [dataSource]="championship.lastResult.sessions[0].results">
+      <!-- Message to show when there are no sessions. -->
+      <h5 *ngIf="championship.lastResult == null || championship.lastResult.session.length == 0">There hasn't been a
+        session yet.</h5>
 
-        <!-- Position column. -->
-        <ng-container matColumnDef="position">
-          <mat-header-cell *matHeaderCellDef><abbr title="Position">Pos</abbr></mat-header-cell>
-          <mat-cell *matCellDef="let row">
-            <span>{{row.position}}</span>
-          </mat-cell>
-        </ng-container>
+      <!-- Top 3 results from last session. -->
+      <div *ngIf="championship.lastResult != null && championship.lastResult.sessions.length > 0">
+        <h3>Last session result ({{championship.lastResult.sessions[0].sessionType.toString() | lowercase }})</h3>
 
-        <!-- Name column. -->
-        <ng-container matColumnDef="name">
-          <mat-header-cell *matHeaderCellDef>Driver</mat-header-cell>
-          <mat-cell *matCellDef="let row">
-            <span>{{row.driver}}</span>
-          </mat-cell>
-        </ng-container>
+        <mat-table [dataSource]="championship.lastResult.sessions[0].results">
 
-        <!-- Time column. -->
-        <ng-container matColumnDef="time">
-          <mat-header-cell *matHeaderCellDef>Fastest lap</mat-header-cell>
-          <mat-cell *matCellDef="let row">
-            <span>{{row.time}}</span>
-          </mat-cell>
-        </ng-container>
+          <!-- Position column. -->
+          <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef><abbr title="Position">Pos</abbr></mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <span>{{row.position}}</span>
+            </mat-cell>
+          </ng-container>
 
-        <!-- Laps column. -->
-        <ng-container matColumnDef="laps">
-          <mat-header-cell *matHeaderCellDef>Laps</mat-header-cell>
-          <mat-cell *matCellDef="let row">
-            <span>{{row.laps}}</span>
-          </mat-cell>
-        </ng-container>
+          <!-- Name column. -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Driver</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <span>{{row.driver}}</span>
+            </mat-cell>
+          </ng-container>
 
-        <!-- Header row definition. -->
-        <mat-header-row *matHeaderRowDef="raceColumns"></mat-header-row>
+          <!-- Time column. -->
+          <ng-container matColumnDef="time">
+            <mat-header-cell *matHeaderCellDef>Fastest lap</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <span>{{row.time}}</span>
+            </mat-cell>
+          </ng-container>
 
-        <!--Content row definition. -->
-        <mat-row *matRowDef="let row; columns: raceColumns;"></mat-row>
-      </mat-table>
+          <!-- Laps column. -->
+          <ng-container matColumnDef="laps">
+            <mat-header-cell *matHeaderCellDef>Laps</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <span>{{row.laps}}</span>
+            </mat-cell>
+          </ng-container>
 
-      <mat-card-actions>
-        <a mat-raised-button ripple color="primary" [routerLink]="['/', 'championship', championship.id, 'race', championship.lastResult.id]">Go
-          to race</a>
+          <!-- Header row definition. -->
+          <mat-header-row *matHeaderRowDef="raceColumns"></mat-header-row>
 
-        <a mat-raised-button ripple color="primary" [routerLink]="['/', 'championship', championship.id, 'races']">View
-          all races</a>
-      </mat-card-actions>
+          <!--Content row definition. -->
+          <mat-row *matRowDef="let row; columns: raceColumns;"></mat-row>
+        </mat-table>
+
+        <mat-card-actions>
+          <a mat-raised-button ripple color="primary" [routerLink]="['/', 'championship', championship.id, 'race', championship.lastResult.id]">Go
+            to race</a>
+
+          <a mat-raised-button ripple color="primary" [routerLink]="['/', 'championship', championship.id, 'races']">View
+            all races</a>
+        </mat-card-actions>
+      </div>
     </mat-card>
 
     <mat-card class="standings">
       <h3>Current standings</h3>
 
-      <mat-table [dataSource]="championship.standings">
+      <!-- Message to show when there are no standings. -->
+      <h5 *ngIf="championship.standings == null || championship.standings.length == 0">There are no standings* <small>*
+          because
+          there hasn't been a race yet.</small></h5>
 
-        <!-- Position column. -->
-        <ng-container matColumnDef="position">
-          <mat-header-cell *matHeaderCellDef><abbr title="Position">Pos</abbr></mat-header-cell>
-          <mat-cell *matCellDef="let row">
-            <span>{{row.position}}</span>
-          </mat-cell>
-        </ng-container>
+      <!-- Top 3 from the championship standings. -->
+      <div *ngIf="championship.standings != null && championship.standings.length > 0">
+        <mat-table [dataSource]="championship.standings">
 
-        <!-- Name column. -->
-        <ng-container matColumnDef="name">
-          <mat-header-cell *matHeaderCellDef>Driver</mat-header-cell>
-          <mat-cell *matCellDef="let row">
-            <span>{{row.name}}</span>
-          </mat-cell>
-        </ng-container>
+          <!-- Position column. -->
+          <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef><abbr title="Position">Pos</abbr></mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <span>{{row.position}}</span>
+            </mat-cell>
+          </ng-container>
 
-        <!-- Points column. -->
-        <ng-container matColumnDef="points">
-          <mat-header-cell *matHeaderCellDef><abbr title="Points">Pts</abbr></mat-header-cell>
-          <mat-cell *matCellDef="let row">
-            <span>{{row.points}}</span>
-          </mat-cell>
-        </ng-container>
+          <!-- Name column. -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Driver</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <span>{{row.name}}</span>
+            </mat-cell>
+          </ng-container>
 
-        <!-- Header row definition. -->
-        <mat-header-row *matHeaderRowDef="standingColumns"></mat-header-row>
+          <!-- Points column. -->
+          <ng-container matColumnDef="points">
+            <mat-header-cell *matHeaderCellDef><abbr title="Points">Pts</abbr></mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <span>{{row.points}}</span>
+            </mat-cell>
+          </ng-container>
 
-        <!--Content row definition. -->
-        <mat-row *matRowDef="let row; columns: standingColumns;"></mat-row>
-      </mat-table>
+          <!-- Header row definition. -->
+          <mat-header-row *matHeaderRowDef="standingColumns"></mat-header-row>
 
-      <mat-card-actions>
-        <a mat-raised-button ripple color="primary" [routerLink]="['/', 'championship', championship.id, 'standings']">Go
-          to standings</a>
-      </mat-card-actions>
+          <!--Content row definition. -->
+          <mat-row *matRowDef="let row; columns: standingColumns;"></mat-row>
+        </mat-table>
+
+        <mat-card-actions>
+          <a mat-raised-button ripple color="primary" [routerLink]="['/', 'championship', championship.id, 'standings']">Go
+            to standings</a>
+        </mat-card-actions>
+      </div>
     </mat-card>
   </div>
 
