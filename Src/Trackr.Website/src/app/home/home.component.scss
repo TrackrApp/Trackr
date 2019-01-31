@@ -1,5 +1,10 @@
 @import "../../colors.scss";
 
+app-spinner {
+  display: flex;
+  justify-content: center;
+}
+
 .row-wrap {
   flex-flow: row wrap;
 

@@ -1,4 +1,3 @@
-import { HttpErrorResponse } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Race } from "../shared/domain/race.interface";
@@ -27,6 +26,7 @@ export class RaceComponent implements OnInit {
       this.raceService.getRace(this.raceId)
         .then((result: Race) => {
           this.race = result;
+          console.log(result);
         });
     });
   }

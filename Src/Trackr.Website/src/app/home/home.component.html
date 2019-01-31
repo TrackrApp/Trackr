@@ -4,6 +4,10 @@
   <span>Welcome to Trackr, a platform to manage and view race results.</span>
 </mat-card>
 
+<!-- Spinner which is shown when the app is busy retrieving data. -->
+<app-spinner *ngIf="stats == null"></app-spinner>
+
+<!-- UI to shown when the stats are loaded. -->
 <div class="row-wrap" *ngIf="stats != null">
 
   <!-- Championship count. -->
@@ -14,7 +18,7 @@
       </button>
       <div>
         <h3>{{stats.championshipCount}}</h3>
-        <h6>Championships</h6>
+        <h6>Championship<span *ngIf="stats.championshipCount != 1">s</span></h6>
       </div>
     </mat-card-content>
   </mat-card>
@@ -27,7 +31,7 @@
       </button>
       <div>
         <h3>{{stats.driverCount}}</h3>
-        <h6>Drivers</h6>
+        <h6>Driver<span *ngIf="stats.driverCount != 1">s</span></h6>
       </div>
     </mat-card-content>
   </mat-card>
@@ -40,7 +44,7 @@
       </button>
       <div>
         <h3>{{stats.eventCount}}</h3>
-        <h6>Races</h6>
+        <h6>Race<span *ngIf="stats.eventCount != 1">s</span></h6>
       </div>
     </mat-card-content>
   </mat-card>
@@ -53,7 +57,7 @@
       </button>
       <div>
         <h3>{{stats.sessionCount}}</h3>
-        <h6>Sessions</h6>
+        <h6>Session<span *ngIf="stats.sessionCount != 1">s</span></h6>
       </div>
     </mat-card-content>
   </mat-card>
