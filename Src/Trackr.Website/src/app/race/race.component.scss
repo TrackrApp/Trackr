@@ -1,5 +1,16 @@
 @import "../../colors.scss";
 
+.header-image {
+  padding-bottom: 0;
+
+  img {
+    height: 250px;
+    margin-bottom: -4px;
+    object-fit: cover;
+    object-position: 50% 30%;
+  }
+}
+
 .race-details {
   iframe {
     width: 100%;
