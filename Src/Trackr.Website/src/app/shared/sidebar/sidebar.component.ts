@@ -1,18 +1,38 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, NavigationEnd, Params, Router } from "@angular/router";
+import { filter } from "rxjs/operators";
 import { AppVersionService } from "../version/version.service";
-import { MenuItems } from "./menuItems";
 
 @Component({
   selector: "app-sidebar",
   templateUrl: "./sidebar.component.html",
   styleUrls: ["./sidebar.component.scss"]
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
+  private championshipId: number;
+  private raceId: number;
+
   public version: string = this.appVersionService.getVersion();
 
   constructor(
-    public menu: MenuItems,
+    public router: Router,
+    private route: ActivatedRoute,
     private appVersionService: AppVersionService) { }
+
+  ngOnInit() {
+    this.router.events
+      .pipe(filter(e => e instanceof NavigationEnd))
+      .subscribe(() => {
+        // Go as deep into the route[s] as possible.
+        let active = this.route;
+        while (active.firstChild) { active = active.firstChild; }
+        // Subscribe to the params.
+        active.params.subscribe((params: Params) => {
+          console.log(params);
+          // Set the id's locally.
+          this.championshipId = params["cId"];
+          this.raceId = params["rId"];
+        });
+      });
+  }
 }
-
-

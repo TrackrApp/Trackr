@@ -1,6 +1,5 @@
 import { Routes } from "@angular/router";
 import { AboutComponent } from "./about/about.component";
-import { LoginComponent } from "./auth/login/login.component";
 import { ChampionshipComponent } from "./championship/championship.component";
 import { HomeComponent } from "./home/home.component";
 import { RaceComponent } from "./race/race.component";
@@ -44,16 +43,6 @@ export const routes: Routes = [
       }
     ]
   },
-  // Auth will not be implemented in v1, so disable until then.
-  // {
-  //   path: "auth",
-  //   children: [
-  //     {
-  //       path: "login",
-  //       component: LoginComponent
-  //     }
-  //   ]
-  // },
   {
     path: "about",
     component: AboutComponent

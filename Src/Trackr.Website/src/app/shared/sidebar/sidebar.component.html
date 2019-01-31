@@ -1,33 +1,63 @@
 <mat-nav-list>
-  <mat-list-item *ngFor="let item of menu.getItems()" routerLinkActive="selected">
-    <!-- Root menu item. -->
-    <a [routerLink]="['/', item.url]" class="root-item" *ngIf="item.type === ''">
-      <i class="fas fa-{{item.icon}}"></i>
-      <span>{{item.name}}</span>
+  <!-- Home. -->
+  <mat-list-item routerLinkActive="selected">
+    <a [routerLink]="['/', 'home']" class="root-item">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
     </a>
+  </mat-list-item>
 
-    <!-- Sub menu root. -->
-    <a class="root-item" *ngIf="item.type === 'sub'">
-      <i class="fas fa-{{item.icon}}"></i>
-      <span>{{item.name}}</span>
+  <!-- Search. -->
+  <mat-list-item routerLinkActive="selected">
+    <a [routerLink]="['/', 'search']" class="root-item">
+      <i class="fas fa-search"></i>
+      <span>Search</span>
+    </a>
+  </mat-list-item>
+
+  <!-- Championship. -->
+  <mat-list-item routerLinkActive="selected" *ngIf="router.url.indexOf('championship') > -1">
+    <a class="root-item">
+      <i class="fas fa-trophy"></i>
+      <span>Championship</span>
       <span class="fxFlex"></span>
       <i class="dropdown fas fa-angle-down"></i>
     </a>
 
-    <mat-nav-list class="sub-item-children" *ngIf="item.type === 'sub'">
-      <!-- Sub menu item. -->
-      <mat-list-item *ngFor="let subItem of item.children" routerLinkActive="selected">
-        <a [routerLink]="['/', item.url, subItem.url]" routerLinkActive="selected" *ngIf="subItem.type === ''">
-          <span>{{subItem.name}}</span>
-        </a>
-
-        <a [routerLink]="['/', item.url, 1, subItem.url]" routerLinkActive="selected" *ngIf="subItem.type === 'id'">
-          <span>{{subItem.name}}</span>
+    <mat-nav-list class="sub-item-children">
+      <!-- Overview. -->
+      <mat-list-item routerLinkActive="selected">
+        <a [routerLink]="['/', 'championship', championshipId, 'overview']" routerLinkActive="selected">
+          <span>Overview</span>
         </a>
       </mat-list-item>
+
+      <!-- Races. -->
+      <mat-list-item routerLinkActive="selected">
+        <a [routerLink]="['/', 'championship', championshipId, 'races']" routerLinkActive="selected">
+          <span>Races</span>
+        </a>
+      </mat-list-item>
+
+      <!-- Standings. -->
+      <mat-list-item routerLinkActive="selected">
+        <a [routerLink]="['/', 'championship', championshipId, 'standings']" routerLinkActive="selected">
+          <span>Overview</span>
+        </a>
+      </mat-list-item>
+
     </mat-nav-list>
 
   </mat-list-item>
+
+  <!-- About. -->
+  <mat-list-item routerLinkActive="selected">
+    <a [routerLink]="['/', 'about']" class="root-item">
+      <i class="fas fa-info-circle"></i>
+      <span>About</span>
+    </a>
+  </mat-list-item>
+
 </mat-nav-list>
 
 <div class="about-app text-center">

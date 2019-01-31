@@ -1,7 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { map } from "rxjs/operators";
-import { SessionType } from "../shared/domain/sessionType.interface";
 import { ChampionshipService } from "./championship.service";
 import { ChampionshipOverview } from "./domain/championshipOverview.interface";
 
@@ -17,8 +15,8 @@ export class ChampionshipComponent implements OnInit {
   public standingColumns = ["position", "name", "points"];
 
   constructor(
-    private championshipService: ChampionshipService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private championshipService: ChampionshipService
   ) { }
 
   ngOnInit() {
