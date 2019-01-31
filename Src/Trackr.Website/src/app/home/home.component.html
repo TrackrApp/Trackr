@@ -3,3 +3,59 @@
 
   <span>Welcome to Trackr, a platform to manage and view race results.</span>
 </mat-card>
+
+<div class="row-wrap" *ngIf="stats != null">
+
+  <!-- Championship count. -->
+  <mat-card>
+    <mat-card-content>
+      <button mat-fab color="accent">
+        <i class="fa fa-trophy"></i>
+      </button>
+      <div>
+        <h3>{{stats.championshipCount}}</h3>
+        <h6>Championships</h6>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Drivers count. -->
+  <mat-card>
+    <mat-card-content>
+      <button mat-fab color="primary">
+        <i class="fa fa-user-alt"></i>
+      </button>
+      <div>
+        <h3>{{stats.driverCount}}</h3>
+        <h6>Drivers</h6>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Events count. -->
+  <mat-card>
+    <mat-card-content>
+      <button mat-fab color="warn">
+        <i class="fa fa-flag-checkered"></i>
+      </button>
+      <div>
+        <h3>{{stats.eventCount}}</h3>
+        <h6>Races</h6>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Session count. -->
+  <mat-card>
+    <mat-card-content>
+      <button mat-fab color="default">
+        <i class="fa fa-stopwatch"></i>
+      </button>
+      <div>
+        <h3>{{stats.sessionCount}}</h3>
+        <h6>Sessions</h6>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+</div>
