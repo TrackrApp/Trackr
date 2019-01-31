@@ -37,13 +37,17 @@
       font-weight: 500;
     }
 
-    .sub-item-children {
+    .sub-item-children, .sub-sub-item-children {
       margin-top: -15px;
 
       a {
         padding-left: 20px;
         margin-bottom: 0;
       }
+    }
+
+    .sub-sub-item-children {
+      margin-top: -5px;
     }
   }
 }

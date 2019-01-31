@@ -15,7 +15,7 @@
     </a>
   </mat-list-item>
 
-  <!-- Championship. -->
+  <!-- Championship/id. [only shown when a championship is opened] -->
   <mat-list-item routerLinkActive="selected" *ngIf="router.url.indexOf('championship') > -1">
     <a class="root-item">
       <i class="fas fa-trophy"></i>
@@ -37,12 +37,26 @@
         <a [routerLink]="['/', 'championship', championshipId, 'races']" routerLinkActive="selected">
           <span>Races</span>
         </a>
+
+        <!-- List of indivial item, below Races parent. -->
+        <mat-nav-list class="sub-sub-item-children">
+
+          <!-- Race/id. [only shown when a race or session is opened] -->
+          <mat-list-item routerLinkActive="selected" *ngIf="router.url.indexOf('race/') > -1">
+            <a [routerLink]="['/', 'championship', championshipId, 'race', raceId]" routerLinkActive="selected">
+              <span>Race</span>
+            </a>
+
+          </mat-list-item>
+
+        </mat-nav-list>
+
       </mat-list-item>
 
       <!-- Standings. -->
       <mat-list-item routerLinkActive="selected">
         <a [routerLink]="['/', 'championship', championshipId, 'standings']" routerLinkActive="selected">
-          <span>Overview</span>
+          <span>Standings</span>
         </a>
       </mat-list-item>
 
