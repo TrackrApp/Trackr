@@ -8,6 +8,7 @@ import { AppComponent } from "./app.component";
 import { routes } from "./app.routes";
 import { AuthModule } from "./auth/auth.module";
 import { ChampionshipModule } from "./championship/championship.module";
+import { DashboardModule } from "./dashboard/dashboard.module";
 import { HomeModule } from "./home/home.module";
 import { RaceModule } from "./race/race.module";
 import { RacesModule } from "./races/races.module";
@@ -33,6 +34,7 @@ import { StandingsModule } from "./standings/standings.module";
     HttpClientModule,
     SidebarModule,
     HomeModule,
+    DashboardModule,
     SearchModule,
     AuthModule,
     ChampionshipModule,

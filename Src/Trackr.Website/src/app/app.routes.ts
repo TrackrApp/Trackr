@@ -1,6 +1,7 @@
 import { Routes } from "@angular/router";
 import { AboutComponent } from "./about/about.component";
 import { ChampionshipComponent } from "./championship/championship.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HomeComponent } from "./home/home.component";
 import { RaceComponent } from "./race/race.component";
 import { RacesComponent } from "./races/races.component";
@@ -18,6 +19,10 @@ export const routes: Routes = [
     path: "home",
     component: HomeComponent
   },
+  // {
+  //   path: "dashboard",
+  //   component: DashboardComponent
+  // },
   {
     path: "search",
     component: SearchComponent
