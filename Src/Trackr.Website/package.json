@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-	"build-prod": "ng build --prod --aot",
+    "build-prod": "ng build --prod --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -24,6 +24,7 @@
     "@angular/router": "~7.2.0",
     "@types/node": "^10.12.18",
     "core-js": "^2.5.4",
+    "ngx-material-file-input": "^1.1.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"

@@ -1,0 +1,48 @@
+<mat-card>
+  <h1>New race</h1>
+</mat-card>
+
+<mat-card>
+  <h3>Fill the form below to add a new race to the championship.</h3>
+
+  <form #addRaceForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <h5>Basic information about the race</h5>
+
+    <mat-form-field appearance="standard">
+      <mat-label>Name of the race (event)</mat-label>
+      <input matInput placeholder="E.g. Grand Prix of Zandvoort" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label>The location where the race takes place</mat-label>
+      <input matInput placeholder="E.g. Circuit Park Zandvoort" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label>The date when the race takes place</mat-label>
+      <input matInput [matDatepicker]="raceStartDate" required />
+      <mat-datepicker-toggle matSuffix [for]="raceStartDate"></mat-datepicker-toggle>
+      <mat-datepicker #raceStartDate></mat-datepicker>
+    </mat-form-field>
+
+    <h5>Enter additional information about the location</h5>
+
+    <mat-form-field appearance="standard">
+      <mat-label>The adress of the location</mat-label>
+      <input matInput placeholder="E.g. Burgemeester van Alphenstraat 108, 2041 KP Zandvoort" />
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label>The website of the location</mat-label>
+      <input matInput placeholder="E.g. www.circuitzandvoort.nl" />
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label>The logo of the location</mat-label>
+      <input matInput placeholder="E.g. www.circuitzandvoort.nl" />
+    </mat-form-field>
+
+    <button mat-raised-button mat-ripple color="primary" type="submit">Create race</button>
+  </form>
+</mat-card>

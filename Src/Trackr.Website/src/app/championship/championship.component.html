@@ -4,10 +4,17 @@
 <!-- The page wrapper, containing the view. -->
 <div class="page-wrapper" *ngIf="championship != null">
 
-  <mat-card>
-    <h1>{{championship.name}}</h1>
+  <mat-card class="header">
+    <div class="title">
+      <h1>{{championship.name}}</h1>
 
-    <span>{{championship.description || "No description given."}}</span>
+      <span>{{championship.description || "No description given."}}</span>
+    </div>
+
+    <div class="actions" *ngIf="!isProd">
+      <a mat-raised-button mat-ripple color="primary" [routerLink]="['/', 'championship', championship.id, 'races', 'add']">Add
+        race</a>
+    </div>
   </mat-card>
 
   <div class="content">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { environment } from "src/environments/environment";
 import { ChampionshipService } from "./championship.service";
 import { ChampionshipOverview } from "./domain/championshipOverview.interface";
 
@@ -10,6 +11,8 @@ import { ChampionshipOverview } from "./domain/championshipOverview.interface";
 export class ChampionshipComponent implements OnInit {
   public championshipId: number;
   public championship: ChampionshipOverview;
+
+  public isProd = environment.production;
 
   public raceColumns = ["position", "name", "time", "laps"];
   public standingColumns = ["position", "name", "points"];

@@ -49,3 +49,9 @@ app-spinner {
     }
   }
 }
+
+@media (max-width: 1160px) {
+  .mat-card {
+    flex: 1 1 40% !important;
+  }
+}

@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router";
 import { AboutComponent } from "./about/about.component";
 import { ChampionshipComponent } from "./championship/championship.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
+import { RaceCrudComponent } from "./crud/race/race.crud.component";
 import { HomeComponent } from "./home/home.component";
 import { RaceComponent } from "./race/race.component";
 import { RacesComponent } from "./races/races.component";
@@ -36,7 +36,16 @@ export const routes: Routes = [
       },
       {
         path: "races",
-        component: RacesComponent
+        children: [
+          {
+            path: "",
+            component: RacesComponent
+          },
+          {
+            path: "add",
+            component: RaceCrudComponent
+          }
+        ]
       },
       {
         path: "race/:rId",

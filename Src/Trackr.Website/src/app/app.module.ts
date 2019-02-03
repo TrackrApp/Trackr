@@ -8,6 +8,8 @@ import { AppComponent } from "./app.component";
 import { routes } from "./app.routes";
 import { AuthModule } from "./auth/auth.module";
 import { ChampionshipModule } from "./championship/championship.module";
+import { RaceCrudComponent } from "./crud/race/race.crud.component";
+import { RaceCrudModule } from "./crud/race/race.crud.module";
 import { DashboardModule } from "./dashboard/dashboard.module";
 import { HomeModule } from "./home/home.module";
 import { RaceModule } from "./race/race.module";
@@ -41,6 +43,7 @@ import { StandingsModule } from "./standings/standings.module";
     RacesModule,
     RaceModule,
     StandingsModule,
+    RaceCrudModule,
     AboutModule,
     SharedModule,
     RouterModule.forRoot(routes)
