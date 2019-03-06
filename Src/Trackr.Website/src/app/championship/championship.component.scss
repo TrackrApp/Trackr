@@ -31,6 +31,12 @@ app-spinner {
   .mat-card {
     flex: 1;
 
+    &.race {
+      h3 {
+        margin-top: 0px;
+      }
+    }
+
     h5 {
       color: $gull-grey;
 

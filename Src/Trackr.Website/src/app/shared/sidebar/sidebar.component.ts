@@ -28,7 +28,6 @@ export class SidebarComponent implements OnInit {
         while (active.firstChild) { active = active.firstChild; }
         // Subscribe to the params.
         active.params.subscribe((params: Params) => {
-          console.log(params);
           // Set the id's locally.
           this.championshipId = params["cId"];
           this.raceId = params["rId"];

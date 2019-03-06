@@ -1,0 +1,65 @@
+<!-- Spinner that is shown until the page has loaded, -->
+<app-spinner *ngIf="session == null" [class.shown]="session == null"></app-spinner>
+
+<!-- The page wrapper, containing the view. -->
+<div class="page-wrapper" *ngIf="session != null">
+  <mat-card>
+    <h1>Session results ({{session.sessionType.toString() | lowercase}})</h1>
+
+    <span>The table below shows the results of the session.</span>
+
+    <mat-table [dataSource]="session.results">
+
+      <!-- Position column. -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef><abbr title="Position">Pos</abbr></mat-header-cell>
+        <mat-cell *matCellDef="let driver">
+          <span>{{driver.position}}</span>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Name column. -->
+      <ng-container matColumnDef="driver">
+        <mat-header-cell *matHeaderCellDef>Driver</mat-header-cell>
+        <mat-cell *matCellDef="let driver">
+          <span>{{driver.driver}}</span>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Difference column. -->
+      <ng-container matColumnDef="difference">
+        <mat-header-cell *matHeaderCellDef>
+          <span *ngIf="session.sessionType === 'Race'">Time</span>
+          <span *ngIf="session.sessionType !== 'Race'">Difference</span>
+        </mat-header-cell>
+
+        <mat-cell *matCellDef="let driver">
+          <!-- Default: show difference. -->
+          <span *ngIf="driver.difference && driver.difference < 1000">+ {{driver.difference}}</span>
+          <!-- If difference > 1000, then lapped. Subtract 1000 for +lapcount. -->
+          <span *ngIf="driver.difference && driver.difference > 1000">+ {{driver.difference - 1000}} lap(s)</span>
+          <!-- If no difference but laps; DNF. -->
+          <span *ngIf="!driver.difference && driver.laps !== 0 && driver.position !== 1">DNF</span>
+          <!-- If no difference and no laps; DNS. -->
+          <span *ngIf="!driver.difference && driver.laps === 0 && !driver.time">DNS</span>
+          <!-- #1 always has time. -->
+          <span *ngIf="driver.position === 1">{{driver.time}}</span>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Laps column. -->
+      <ng-container matColumnDef="laps">
+        <mat-header-cell *matHeaderCellDef>Laps</mat-header-cell>
+        <mat-cell *matCellDef="let driver">
+          <span>{{driver.laps}}</span>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Header row definition. -->
+      <mat-header-row *matHeaderRowDef="resultColumns"></mat-header-row>
+
+      <!--Content row definition. -->
+      <mat-row *matRowDef="let row; columns: resultColumns;"></mat-row>
+    </mat-table>
+  </mat-card>
+</div>

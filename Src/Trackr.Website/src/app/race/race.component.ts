@@ -26,7 +26,6 @@ export class RaceComponent implements OnInit {
       this.raceService.getRace(this.raceId)
         .then((result: Race) => {
           this.race = result;
-          console.log(result);
         });
     });
   }

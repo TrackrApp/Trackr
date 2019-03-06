@@ -23,6 +23,10 @@ app-spinner {
       h4 {
         margin: 10px 0 0 0;
         color: $gull-grey;
+
+        sup {
+          vertical-align: initial;
+        }
       }
 
       .race-detail {

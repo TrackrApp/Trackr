@@ -19,11 +19,11 @@
 
   <div class="content">
     <mat-card class="race">
-      <h3>Last session result</h3>
-
       <!-- Message to show when there are no sessions. -->
-      <h5 *ngIf="championship.lastResult == null || championship.lastResult.session.length == 0">There hasn't been a
-        session yet.</h5>
+      <div *ngIf="championship.lastResult == null || championship.lastResult.sessions.length == 0">
+        <h3>Last session result</h3>
+        <h5>There hasn't been a session yet.</h5>
+      </div>
 
       <!-- Top 3 results from last session. -->
       <div *ngIf="championship.lastResult != null && championship.lastResult.sessions.length > 0">
@@ -49,9 +49,13 @@
 
           <!-- Time column. -->
           <ng-container matColumnDef="time">
-            <mat-header-cell *matHeaderCellDef>Fastest lap</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef>
+              <span *ngIf="championship.lastResult.sessions[0].sessionType === 'Race'">Time</span>
+              <span *ngIf="championship.lastResult.sessions[0].sessionType !== 'Race'">Fastest lap</span>
+            </mat-header-cell>
             <mat-cell *matCellDef="let row">
-              <span>{{row.time}}</span>
+              <span *ngIf="(championship.lastResult.sessions[0].sessionType !== 'Race' || row.position === 1) && row.time">{{row.time}}</span>
+              <span *ngIf="championship.lastResult.sessions[0].sessionType === 'Race' && row.difference">{{row.difference}}</span>
             </mat-cell>
           </ng-container>
 
@@ -81,7 +85,7 @@
     </mat-card>
 
     <mat-card class="standings">
-      <h3>Current standings</h3>
+      <h3>Current standings (top 3)</h3>
 
       <!-- Message to show when there are no standings. -->
       <h5 *ngIf="championship.standings == null || championship.standings.length == 0">There are no standings* <small>*

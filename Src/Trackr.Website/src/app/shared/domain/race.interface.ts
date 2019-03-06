@@ -6,8 +6,9 @@ export interface Race {
   location: string;
   address: string;
   url?: string;
-  headerImage: string;
+  headerImageUrl: string;
   headerPosition: number;
+  eventLogoUrl: string;
   dateFrom: Date;
   dateTo?: Date;
   sessions: Session[];

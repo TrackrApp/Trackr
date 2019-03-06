@@ -3,12 +3,12 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { MaterialModule } from "../shared/material.module";
 import { SharedModule } from "../shared/shared.module";
-import { StandingsService } from "./standing.service";
-import { StandingsComponent } from "./standings.component";
+import { SessionComponent } from "./session.component";
+import { SessionService } from "./session.service";
 
 @NgModule({
   declarations: [
-    StandingsComponent,
+    SessionComponent,
   ],
   imports: [
     CommonModule,
@@ -17,8 +17,8 @@ import { StandingsComponent } from "./standings.component";
     SharedModule
   ],
   providers: [
-    StandingsService
+    SessionService
   ],
-  bootstrap: [StandingsComponent]
+  bootstrap: [SessionComponent]
 })
-export class StandingsModule { }
+export class SessionModule { }

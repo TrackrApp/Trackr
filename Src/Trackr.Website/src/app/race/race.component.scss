@@ -10,7 +10,7 @@ app-spinner {
     padding-bottom: 0;
 
     img {
-      height: 250px;
+      height: 350px;
       margin-bottom: -4px;
       object-fit: cover;
       object-position: 50% 30%;
@@ -29,6 +29,7 @@ app-spinner {
       margin-bottom: 20px;
 
       img {
+        width: 100%;
         height: 128px;
       }
     }
@@ -66,6 +67,10 @@ app-spinner {
       }
     }
 
+    .button-more {
+      margin-left: auto;
+    }
+
     span {
       margin-right: 10px;
     }
@@ -85,6 +90,6 @@ app-spinner {
 
 @media (max-width: 767px) {
   .race-details {
-    flex: 1 1 0%;
+    width: 100%;
   }
 }

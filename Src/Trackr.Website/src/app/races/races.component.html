@@ -17,7 +17,17 @@
     <mat-card *ngFor="let race of races">
       <mat-card-content>
         <h3>{{race.name}}</h3>
-        <h4>{{race.location}}</h4>
+        <h4>
+          {{race.location}}
+          <!-- If there is no dateTo (single day event), show just the dateFrom. -->
+          <sup *ngIf="!race.dateTo">
+            ({{race.dateFrom | date: "dd-MM-yyyy"}})
+          </sup>
+          <!-- If there is a dateTo (multi-day event), show both dates. -->
+          <sup *ngIf="race.dateTo">
+            ({{race.dateFrom | date: "dd-MM-yyyy"}} t/m {{race.dateTo | date: "dd-MM-yyyy"}})
+          </sup>
+        </h4>
         <div class="row-wrap race-detail">
           <div class="fxFlex-50">
             <h5>
