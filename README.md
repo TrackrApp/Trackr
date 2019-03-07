@@ -4,7 +4,7 @@ The front-end of the Trackr app.
 ![Build status](https://img.shields.io/azure-devops/build/dckwlff/GitHub%20projects/7/master.svg?style=flat-square)
 
 ## Features
-Trackr contains the following features.
+Trackr (will) contain(s) the following features.
 
 As an anonymous user you can:
 - View championships, races, sessions and results.
