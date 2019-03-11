@@ -27,7 +27,10 @@
 
       <!-- Top 3 results from last session. -->
       <div *ngIf="championship.lastResult != null && championship.lastResult.sessions.length > 0">
-        <h3>Last session result ({{championship.lastResult.sessions[0].sessionType.toString() | lowercase }})</h3>
+        <h3>
+          Last session result ({{championship.lastResult.sessions[0].sessionType.toString() | lowercase }})
+          <h5 class="inline">{{championship.lastResult.name}}</h5>
+        </h3>
 
         <mat-table [dataSource]="championship.lastResult.sessions[0].results">
 

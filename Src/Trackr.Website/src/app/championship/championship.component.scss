@@ -40,6 +40,11 @@ app-spinner {
     h5 {
       color: $gull-grey;
 
+      &.inline {
+        display: inline-block;
+        margin: 0;
+      }
+
       small {
         display: block;
         margin-top: 15px;

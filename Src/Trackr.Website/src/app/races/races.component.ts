@@ -24,6 +24,7 @@ export class RacesComponent implements OnInit {
       // Call the service to retrieve the data from the API.
       this.racesService.getRaces(this.championshipId)
         .then((result: Race[]) => {
+          console.log(result);
           this.races = result;
         })
         .catch((err: Error) => {

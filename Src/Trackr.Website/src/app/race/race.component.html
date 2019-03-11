@@ -5,8 +5,9 @@
 <div class="race-wrapper" *ngIf="race != null">
 
   <!-- Header image, if available. -->
-  <mat-card class="header-image" *ngIf="race.headerImageUrl != null">
-    <img mat-card-image [src]="race.headerImageUrl" [ngStyle]="{'object-position': '0%' + race.headerPosition + '%'}" />
+  <mat-card class="header-image">
+    <img mat-card-image *ngIf="race.headerImageUrl != null" [src]="race.headerImageUrl" [ngStyle]="{'object-position': '0%' + race.headerPosition + '%'}" />
+    <img mat-card-image *ngIf="race.headerImageUrl == null" src="/assets/images/race-stock.jpg" style="object-position: 0% 40%" />
   </mat-card>
 
   <!-- Main race info. -->

@@ -12,9 +12,12 @@ app-spinner {
   .list {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
 
     .mat-card {
-      flex: 0 0 calc(50% - 62px);
+      max-width: calc(50% - 62px);
+      flex-grow: 1;
+      flex: calc(50% - 62px);
 
       h3 {
         margin: 0;
