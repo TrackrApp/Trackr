@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="main-container dark">
   <!-- Toolbar on top of the page. -->
-  <mat-toolbar class="topbar mat-toolbar mat-toolbar-primary single-row">
+  <mat-toolbar class="topbar mat-toolbar mat-toolbar-primary single-row fixed">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">
         <!-- Logo goes here. -->
@@ -10,7 +10,7 @@
     <button mat-icon-button="" (click)="snav.toggle()" value="sidebarclosed" class="mat-icon-button">
       <span class="mat-button-wrapper">
         <i class="fas fa-bars" [ngClass]="{'fa-rotate-90': snav.opened}" role="img" aria-hidden="true"></i>
-        <span>Trackr{{sidebarOpened}}</span>
+        <span>Trackr</span>
       </span>
       <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
       <div class="mat-button-focus-overlay"></div>
@@ -20,7 +20,7 @@
   </mat-toolbar>
 
   <!-- Page container with side menu and content. -->
-  <mat-sidenav-container class=" mat-drawer-container mat-sidenav-container mat-drawer-transition">
+  <mat-sidenav-container class=" mat-drawer-container mat-sidenav-container mat-drawer-transition toolbar-fixed">
     <div class="mat-drawer-backdrop ng-star-inserted"></div>
 
     <!-- Side menu. -->

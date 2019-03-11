@@ -26,6 +26,7 @@ export class SidebarComponent implements OnInit {
         // Go as deep into the route[s] as possible.
         let active = this.route;
         while (active.firstChild) { active = active.firstChild; }
+
         // Subscribe to the params.
         active.params.subscribe((params: Params) => {
           // Set the id's locally.

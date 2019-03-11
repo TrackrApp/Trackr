@@ -23,6 +23,10 @@
     height: 64px !important;
   }
 
+  &.fixed {
+    position: fixed;
+  }
+
   .mat-button-wrapper {
     vertical-align: inherit;
 
@@ -45,6 +49,11 @@
   display: block;
   overflow: hidden;
   flex: 1 0 auto;
+
+  &.toolbar-fixed {
+    margin-top: 64px;
+    padding-bottom: 32px;
+  }
 
   .mat-drawer {
     display: block;
