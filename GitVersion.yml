@@ -4,6 +4,7 @@ mode: ContinuousDeployment
 branches: {
   master: {
      mode: ContinuousDelivery,
-     tag: ''
+     tag: '',
+     increment: Patch
   }
 }
