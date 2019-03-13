@@ -44,7 +44,12 @@ app-spinner {
 }
 
 @media (max-width: 767px) {
-  .list {
-    flex-direction: column;
+  .races-results {
+    .list {
+      .mat-card {
+        max-width: 100%;
+        flex: 100%;
+      }
+    }
   }
 }

@@ -5,10 +5,10 @@
 
 </mat-card>
 
-<div class="races-results">
-  <!-- Spinner which is shown when the app is busy retrieving data. -->
-  <app-spinner *ngIf="races == null"></app-spinner>
+<!-- Spinner which is shown when the app is busy retrieving data. -->
+<app-spinner *ngIf="races == null" [class.shown]="races == null"></app-spinner>
 
+<div class="races-results">
   <!-- Message shown when result count is 0. -->
   <h5 *ngIf="races != null && races.length === 0" class="empty text-center">This championship has no races.</h5>
 

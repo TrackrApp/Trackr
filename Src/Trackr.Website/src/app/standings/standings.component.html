@@ -1,12 +1,16 @@
-<!-- Spinner that is shown until the page has loaded, -->
+<mat-card>
+  <h1>Standings</h1>
+
+  <span>The table below shows the current standings of the championship.</span>
+
+</mat-card>
+
+<!-- Spinner which is shown when the app is busy retrieving data. -->
 <app-spinner *ngIf="standings == null" [class.shown]="standings == null"></app-spinner>
 
 <!-- The page wrapper, containing the view. -->
 <div class="page-wrapper" *ngIf="standings != null">
   <mat-card>
-    <h1>Standings</h1>
-
-    <span>The table below shows the current standings of the championship.</span>
 
     <mat-table [dataSource]="standings">
 

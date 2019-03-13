@@ -71,6 +71,20 @@
     }
   }
 
+  .fa {
+    &.gold {
+      color: $gold;
+    }
+
+    &.silver {
+      color: $silver;
+    }
+
+    &.bronze {
+      color: $brandy-punch;
+    }
+  }
+
   .text-center{
     text-align: center;
   }

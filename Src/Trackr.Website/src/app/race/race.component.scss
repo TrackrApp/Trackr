@@ -1,8 +1,12 @@
 @import "../../colors.scss";
 
 app-spinner {
-  display: flex;
-  justify-content: center;
+  display: none;
+
+  &.shown {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .race-wrapper {
@@ -51,20 +55,6 @@ app-spinner {
     h5 {
       color: $gull-grey;
       display: inline-block;
-    }
-
-    .fa {
-      &.gold {
-        color: $gold;
-      }
-
-      &.silver {
-        color: $silver;
-      }
-
-      &.bronze {
-        color: $brandy-punch;
-      }
     }
 
     .button-more {

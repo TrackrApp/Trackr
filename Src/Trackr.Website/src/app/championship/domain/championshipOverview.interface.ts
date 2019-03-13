@@ -5,6 +5,7 @@ export interface ChampionshipOverview {
   id: number;
   name: string;
   description: string;
+  championshipImageUrl: string;
   lastResult: Race;
   standings: Standing[];
 }

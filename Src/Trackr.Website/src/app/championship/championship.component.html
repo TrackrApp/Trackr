@@ -5,6 +5,7 @@
 <div class="page-wrapper" *ngIf="championship != null">
 
   <mat-card class="header">
+    <img *ngIf="championship.championshipImageUrl" [src]="championship.championshipImageUrl" [alt]="championship.name" />
     <div class="title">
       <h1>{{championship.name}}</h1>
 
@@ -88,12 +89,16 @@
     </mat-card>
 
     <mat-card class="standings">
-      <h3>Current standings (top 3)</h3>
-
-      <!-- Message to show when there are no standings. -->
-      <h5 *ngIf="championship.standings == null || championship.standings.length == 0">There are no standings* <small>*
-          because
-          there hasn't been a race yet.</small></h5>
+      <h3>
+        Current standings (top 3)
+        <h5 class="inline">
+          <!-- Message to show when there are no standings. -->
+          <span *ngIf="championship.standings == null || championship.standings.length == 0">
+            There are no standings*
+            <small>* because there hasn't been a race yet.</small>
+          </span>
+        </h5>
+      </h3>
 
       <!-- Top 3 from the championship standings. -->
       <div *ngIf="championship.standings != null && championship.standings.length > 0">
