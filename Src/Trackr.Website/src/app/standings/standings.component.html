@@ -19,6 +19,9 @@
         <mat-header-cell *matHeaderCellDef><abbr title="Position">Pos</abbr></mat-header-cell>
         <mat-cell *matCellDef="let driver">
           <span>{{driver.position}}</span>
+          <i *ngIf="driver.position === 1" class="fa fa-trophy gold"></i>
+          <i *ngIf="driver.position === 2" class="fa fa-trophy silver"></i>
+          <i *ngIf="driver.position === 3" class="fa fa-trophy bronze"></i>
         </mat-cell>
       </ng-container>
 
