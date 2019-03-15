@@ -29,6 +29,18 @@
     "lapOrMore": "Lap(s)",
     "points": "<abbr title=\"Points\">Pts</abbr>"
   },
+  "menu": {
+    "home": "Home",
+    "search": "Search",
+    "championship": {
+      "root": "Championship",
+      "overview": "Overview",
+      "races": "Races",
+      "race": "Race",
+      "standings": "Standings"
+    },
+    "about": "About"
+  },
   "home": {
     "title": "Home",
     "description": "Welcome to Trackr, a platform to manage and view race results."

@@ -29,13 +29,25 @@
     "lapOrMore": "Ronde(s)",
     "points": "<abbr title=\"Punten\">Ptn</abbr>"
   },
+  "menu": {
+    "home": "Home",
+    "search": "Zoeken",
+    "championship": {
+      "root": "Kampioenschap",
+      "overview": "Overzicht",
+      "races": "Races",
+      "race": "Race",
+      "standings": "Stand"
+    },
+    "about": "Over"
+  },
   "home": {
     "title": "Home",
     "description": "Welkom bij Trackr, een platform om race resultaten te beheren en in te zien."
   },
   "about": {
     "title": "Over",
-    "description": "Trackr is een applicatie dat gebruikers in staat stelt om races, sessies en resultaten te beheren. Het berekend ook automatisch de stand in kampioenschappen op basis van resulaten",
+    "description": "Trackr is een applicatie die gebruikers in staat stelt om races, sessies en resultaten te beheren. Het berekend ook automatisch de stand in kampioenschappen op basis van resulaten",
     "developedBy": "Trackr is ontwikkeld door <a href=\"http://twitter.com/dickw0lff\" _target=\"blank\">Dick Wolff</a>.",
     "reportBugs": "Fout gevonden? Rapporteer het op <a href=\"https://github.com/TrackrApp/Trackr\" _target=\"blank\"><i class=\"fab fa-github\"></i>Github</a>!"
   },

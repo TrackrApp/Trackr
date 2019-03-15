@@ -3,7 +3,7 @@
   <mat-list-item routerLinkActive="selected">
     <a [routerLink]="['/', 'home']" class="root-item">
       <i class="fas fa-home"></i>
-      <span>Home</span>
+      <span [translate]="'menu.home'"></span>
     </a>
   </mat-list-item>
 
@@ -11,7 +11,7 @@
   <mat-list-item routerLinkActive="selected">
     <a [routerLink]="['/', 'search']" class="root-item">
       <i class="fas fa-search"></i>
-      <span>Search</span>
+      <span [translate]="'menu.search'"></span>
     </a>
   </mat-list-item>
 
@@ -19,7 +19,7 @@
   <mat-list-item routerLinkActive="selected" *ngIf="router.url.indexOf('championship') > -1">
     <a class="root-item">
       <i class="fas fa-trophy"></i>
-      <span>Championship</span>
+      <span [translate]="'menu.championship.root'"></span>
       <span class="fxFlex"></span>
       <i class="dropdown fas fa-angle-down"></i>
     </a>
@@ -29,14 +29,14 @@
       <!-- Overview. -->
       <mat-list-item routerLinkActive="selected">
         <a [routerLink]="['/', 'championship', championshipId, 'overview']" routerLinkActive="selected">
-          <span>Overview</span>
+          <span [translate]="'menu.championship.overview'"></span>
         </a>
       </mat-list-item>
 
       <!-- Races. -->
       <mat-list-item routerLinkActive="selected">
         <a [routerLink]="['/', 'championship', championshipId, 'races']" routerLinkActive="selected">
-          <span>Races</span>
+          <span [translate]="'menu.championship.races'"></span>
         </a>
 
         <!-- List of indivial item, below Races parent. -->
@@ -45,7 +45,7 @@
           <!-- Race/id. [only shown when a race or session is opened] -->
           <mat-list-item routerLinkActive="selected" *ngIf="router.url.indexOf('race/') > -1">
             <a [routerLink]="['/', 'championship', championshipId, 'race', raceId]" routerLinkActive="selected">
-              <span>Race</span>
+              <span [translate]="'menu.championship.race'"></span>
             </a>
 
           </mat-list-item>
@@ -57,7 +57,7 @@
       <!-- Standings. -->
       <mat-list-item routerLinkActive="selected">
         <a [routerLink]="['/', 'championship', championshipId, 'standings']" routerLinkActive="selected">
-          <span>Standings</span>
+          <span [translate]="'menu.championship.standings'"></span>
         </a>
       </mat-list-item>
 
@@ -69,7 +69,7 @@
   <mat-list-item routerLinkActive="selected">
     <a [routerLink]="['/', 'about']" class="root-item">
       <i class="fas fa-info-circle"></i>
-      <span>About</span>
+      <span [translate]="'menu.about'"></span>
     </a>
   </mat-list-item>
 
