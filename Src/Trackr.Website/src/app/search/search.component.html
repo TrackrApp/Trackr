@@ -29,9 +29,9 @@
             <h5>
               <span *ngIf="championship.events == null || championship.events.length === 0" [translate]="'generic.noRaces'"></span>
               <span *ngIf="championship.events.length === 1">{{championship.events.length}} {{'generic.race' |
-                translate}}.</span>
+                translate}}</span>
               <span *ngIf="championship.events.length > 1">{{championship.events.length}} {{'generic.races' |
-                translate}}.</span>
+                translate}}</span>
             </h5>
           </div>
           <div class="fxFlex-50 text-right">
