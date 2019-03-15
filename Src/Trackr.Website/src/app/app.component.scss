@@ -84,3 +84,26 @@
     color: $white;
   }
 }
+
+.flag {
+  width: 24px;
+  height: 24px;
+  display: block;
+  background-size: 24px;
+
+  &.en {
+    background-image: url("/assets/images/flag.en.png");
+  }
+
+  &.nl {
+    background-image: url("/assets/images/flag.nl.png");
+  }
+}
+
+/deep/.mat-menu-item {
+  .flag {
+    display: inline-block;
+    margin-right: 16px;
+    vertical-align: middle;
+  }
+}

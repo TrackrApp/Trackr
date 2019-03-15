@@ -1,0 +1,71 @@
+{
+  "generic": {
+    "championship": "Kampioenschap",
+    "championships": "Kampioenschappen",
+    "driver": "Coureur",
+    "drivers": "Coureurs",
+    "race": "Race",
+    "races": "Races",
+    "noRaces": "Nog geen races.",
+    "goToRace": "Ga naar race",
+    "allRaces": "Toon alle races",
+    "session": "Sessie",
+    "sessions": "Sessies",
+    "noSessions": "Er zijn nog geen sessies.",
+    "viewChampionship": "Toon kampioenschap",
+    "viewResults": "Toon resultaten"
+  },
+  "lang": {
+    "english": "Engels",
+    "dutch": "Nederlands"
+  },
+  "table": {
+    "position": "<abbr title=\"Positie\">Pos</abbr>",
+    "driver": "Coureur",
+    "time": "Tijd",
+    "difference": "Verschil",
+    "fastestLap": "Snelste ronde",
+    "laps": "Rondes",
+    "lapOrMore": "Ronde(s)",
+    "points": "<abbr title=\"Punten\">Ptn</abbr>"
+  },
+  "home": {
+    "title": "Home",
+    "description": "Welkom bij Trackr, een platform om race resultaten te beheren en in te zien."
+  },
+  "about": {
+    "title": "Over",
+    "description": "Trackr is een applicatie dat gebruikers in staat stelt om races, sessies en resultaten te beheren. Het berekend ook automatisch de stand in kampioenschappen op basis van resulaten",
+    "developedBy": "Trackr is ontwikkeld door <a href=\"http://twitter.com/dickw0lff\" _target=\"blank\">Dick Wolff</a>.",
+    "reportBugs": "Fout gevonden? Rapporteer het op <a href=\"https://github.com/TrackrApp/Trackr\" _target=\"blank\"><i class=\"fab fa-github\"></i>Github</a>!"
+  },
+  "search": {
+    "title": "Zoeken",
+    "hint": "Type je zoekopdracht..",
+    "hintDetail": "Start met typen om te zoeken, bijvoorbeeld. OTKC",
+    "noResults": "Geen kampioenschappen gevonden voor deze zoekopdracht."
+  },
+  "championship": {
+    "lastSessionResult": "Resultaat van de laatste sessie",
+    "noSessions": "Er is nog geen sessie geweest.0",
+    "currentStandings": "Huidige stand (top 3)",
+    "noStandings": "Er is nog  een stand*<small>* omdat er nog geen race geweest is.</small></span>",
+    "goToStandings": "Ga naar de stand"
+  },
+  "races": {
+    "title": "Races",
+    "description": "Bekijk de races en de daarbij horende resultaten.",
+    "championshipNoRaces": "Dit kampioenschap heeft nog geen races."
+  },
+  "race": {
+    "website": "Website"
+  },
+  "session": {
+    "title": "Sessie resultaat",
+    "description": "De onderstaande tabel toont het resultaat van de sessie."
+  },
+  "standings": {
+    "title": "Stand",
+    "description": "De onderstaande tabel toont de huidige stand in het kampioenschap."
+  }
+}

@@ -4,9 +4,9 @@
 <!-- The page wrapper, containing the view. -->
 <div class="page-wrapper" *ngIf="session != null">
   <mat-card>
-    <h1>Session results ({{session.sessionType.toString() | lowercase}})</h1>
+    <h1>{{'session.title' | translate}} ({{session.sessionType.toString() | lowercase}})</h1>
 
-    <span>The table below shows the results of the session.</span>
+    <span [translate]="'session.description'"></span>
 
     <mat-table [dataSource]="session.results">
 
@@ -23,7 +23,7 @@
 
       <!-- Name column. -->
       <ng-container matColumnDef="driver">
-        <mat-header-cell *matHeaderCellDef>Driver</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef [translate]="'table.driver'"></mat-header-cell>
         <mat-cell *matCellDef="let driver">
           <span>{{driver.driver}}</span>
         </mat-cell>
@@ -32,15 +32,16 @@
       <!-- Difference column. -->
       <ng-container matColumnDef="difference">
         <mat-header-cell *matHeaderCellDef>
-          <span *ngIf="session.sessionType === 'Race'">Time</span>
-          <span *ngIf="session.sessionType !== 'Race'">Difference</span>
+          <span *ngIf="session.sessionType === 'Race'" [translate]="'table.time'"></span>
+          <span *ngIf="session.sessionType !== 'Race'" [translate]="'table.difference'"></span>
         </mat-header-cell>
 
         <mat-cell *matCellDef="let driver">
           <!-- Default: show difference. -->
           <span *ngIf="driver.difference && driver.difference < 1000">+ {{driver.difference}}</span>
           <!-- If difference > 1000, then lapped. Subtract 1000 for +lapcount. -->
-          <span *ngIf="driver.difference && driver.difference > 1000">+ {{driver.difference - 1000}} lap(s)</span>
+          <span *ngIf="driver.difference && driver.difference > 1000">+ {{driver.difference - 1000}}
+            {{'table.lapOrMore' | translate | lowercase}}</span>
           <!-- If no difference but laps; DNF. -->
           <span *ngIf="!driver.difference && driver.laps !== 0 && driver.position !== 1">DNF</span>
           <!-- If no difference and no laps; DNS. -->
@@ -52,7 +53,7 @@
 
       <!-- Laps column. -->
       <ng-container matColumnDef="laps">
-        <mat-header-cell *matHeaderCellDef>Laps</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef [translate]="'table.laps'"></mat-header-cell>
         <mat-cell *matCellDef="let driver">
           <span>{{driver.laps}}</span>
         </mat-cell>

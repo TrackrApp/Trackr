@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
-import { MatCardModule } from "@angular/material";
+import { MaterialModule } from "../shared/material.module";
+import { SharedModule } from "../shared/shared.module";
 import { AboutComponent } from "./about.component";
 
 @NgModule({
@@ -7,7 +8,8 @@ import { AboutComponent } from "./about.component";
     AboutComponent,
   ],
   imports: [
-    MatCardModule
+    MaterialModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AboutComponent]

@@ -1,7 +1,7 @@
 <mat-card>
-  <h1>Standings</h1>
+  <h1 [translate]="'standings.title'"></h1>
 
-  <span>The table below shows the current standings of the championship.</span>
+  <span [translate]="'standings.description'"></span>
 
 </mat-card>
 
@@ -16,7 +16,7 @@
 
       <!-- Position column. -->
       <ng-container matColumnDef="position">
-        <mat-header-cell *matHeaderCellDef><abbr title="Position">Pos</abbr></mat-header-cell>
+        <mat-header-cell *matHeaderCellDef [innerHTML]="'table.position' | translate"></mat-header-cell>
         <mat-cell *matCellDef="let driver">
           <span>{{driver.position}}</span>
           <i *ngIf="driver.position === 1" class="fa fa-trophy gold"></i>
@@ -27,7 +27,7 @@
 
       <!-- Name column. -->
       <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef>Driver</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef [translate]="'table.driver'"></mat-header-cell>
         <mat-cell *matCellDef="let driver">
           <span>{{driver.name}}</span>
         </mat-cell>
@@ -35,17 +35,9 @@
 
       <!-- Points column. -->
       <ng-container matColumnDef="points">
-        <mat-header-cell *matHeaderCellDef><abbr title="Points">Pts</abbr></mat-header-cell>
+        <mat-header-cell *matHeaderCellDef [innerHTML]="'table.points' | translate"></mat-header-cell>
         <mat-cell *matCellDef="let driver">
           <span>{{driver.points}}</span>
-        </mat-cell>
-      </ng-container>
-
-      <!-- Changes column. -->
-      <ng-container matColumnDef="changes">
-        <mat-header-cell *matHeaderCellDef><abbr title="Changes compared to last race">+ / -</abbr></mat-header-cell>
-        <mat-cell *matCellDef="let driver">
-          <span>{{driver.changes}}</span>
         </mat-cell>
       </ng-container>
 

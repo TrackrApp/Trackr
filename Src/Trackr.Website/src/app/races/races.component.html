@@ -1,7 +1,7 @@
 <mat-card>
-  <h1>Races</h1>
+  <h1 [translate]="'races.title'"></h1>
 
-  <span>View the races, and their individual results.</span>
+  <span [translate]="'races.description'"></span>
 
 </mat-card>
 
@@ -10,7 +10,7 @@
 
 <div class="races-results">
   <!-- Message shown when result count is 0. -->
-  <h5 *ngIf="races != null && races.length === 0" class="empty text-center">This championship has no races.</h5>
+  <h5 *ngIf="races != null && races.length === 0" class="empty text-center" [translate]="'races.championshipNoRaces'"></h5>
 
   <!-- Result container, when result count > 0. -->
   <div *ngIf="races != null && races.length > 0" class="list">
@@ -31,14 +31,14 @@
         <div class="row-wrap race-detail">
           <div class="fxFlex-50">
             <h5>
-              <span *ngIf="race.sessions == null || race.sessions.length === 0">No sessions yet</span>
-              <span *ngIf="race.sessions.length === 1">{{race.sessions.length}} session</span>
-              <span *ngIf="race.sessions.length > 1">{{race.sessions.length}} sessions</span>
+              <span *ngIf="race.sessions == null || race.sessions.length === 0" [translate]="'generic.noSessions'"></span>
+              <span *ngIf="race.sessions.length === 1">{{race.sessions.length}} {{'generic.session' | translate}}</span>
+              <span *ngIf="race.sessions.length > 1">{{race.sessions.length}} {{'generic.sessions'| translate}}</span>
             </h5>
           </div>
           <div class="fxFlex-50 text-right">
-            <a [routerLink]="['/', 'championship', championshipId, 'race', race.id]" class="mat-raised-button mat-primary">View
-              race</a>
+            <a [routerLink]="['/', 'championship', championshipId, 'race', race.id]" class="mat-raised-button mat-primary"
+              [innerHTML]="'generic.goToRace' | translate"></a>
           </div>
         </div>
       </mat-card-content>

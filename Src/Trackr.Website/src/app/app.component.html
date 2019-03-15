@@ -17,6 +17,14 @@
     </button>
 
     <app-header></app-header>
+
+    <button mat-icon-button [matMenuTriggerFor]="langMenu">
+      <span class="flag" [ngClass]="selectedLanguage"></span>
+    </button>
+    <mat-menu #langMenu="matMenu">
+      <button mat-menu-item (click)="changeLanguage('en')"><span class="flag en"></span> {{'lang.english' | translate}}</button>
+      <button mat-menu-item (click)="changeLanguage('nl')"><span class="flag nl"></span> {{'lang.dutch' | translate}}</button>
+    </mat-menu>
   </mat-toolbar>
 
   <!-- Page container with side menu and content. -->

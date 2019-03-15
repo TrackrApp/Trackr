@@ -1,8 +1,12 @@
+<mat-card>
+  <h1 [translate]="'search.title'"></h1>
+</mat-card>
+
 <div class="row-wrap">
   <mat-card class="search-header">
     <mat-form-field appearance="standard">
-      <mat-label>Type your search query..</mat-label>
-      <input matInput placeholder="Start typing to search, e.g. OTKC" name="search" minlength="4" autocomplete="off"
+      <mat-label [translate]="'search.hint'">Type your search query..</mat-label>
+      <input matInput placeholder="{{'search.hintDetail' | translate}}" name="search" minlength="4" autocomplete="off"
         #search (keyup)="searchTerm.next(search.value)" />
     </mat-form-field>
   </mat-card>
@@ -13,8 +17,7 @@
   <app-spinner *ngIf="isSearching"></app-spinner>
 
   <!-- Message shown when result count is 0. -->
-  <h5 *ngIf="!isSearching && searchResults != null && searchResults.length === 0" class="empty text-center">No
-    championships found for this query.</h5>
+  <h5 *ngIf="!isSearching && searchResults != null && searchResults.length === 0" class="empty text-center" [translate]="'search.noResults'"></h5>
 
   <!-- Result container, when result count > 0. -->
   <div *ngIf="!isSearching && searchResults != null && searchResults.length > 0" class="list">
@@ -24,14 +27,16 @@
         <div class="row-wrap championship-detail">
           <div class="fxFlex-50">
             <h5>
-              <span *ngIf="championship.events == null || championship.events.length === 0">No races yet.</span>
-              <span *ngIf="championship.events.length === 1">{{championship.events.length}} race.</span>
-              <span *ngIf="championship.events.length > 1">{{championship.events.length}} races.</span>
+              <span *ngIf="championship.events == null || championship.events.length === 0" [translate]="'generic.noRaces'"></span>
+              <span *ngIf="championship.events.length === 1">{{championship.events.length}} {{'generic.race' |
+                translate}}.</span>
+              <span *ngIf="championship.events.length > 1">{{championship.events.length}} {{'generic.races' |
+                translate}}.</span>
             </h5>
           </div>
           <div class="fxFlex-50 text-right">
-            <a [routerLink]="['/', 'championship', championship.id, 'overview']" class="mat-raised-button mat-primary">View
-              championship</a>
+            <a [routerLink]="['/', 'championship', championship.id, 'overview']" class="mat-raised-button mat-primary"
+              [translate]="'generic.viewChampionship'"></a>
           </div>
         </div>
       </mat-card-content>

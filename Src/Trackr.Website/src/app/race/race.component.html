@@ -27,7 +27,7 @@
         <h3>{{race.name}}</h3>
         <h6>{{race.location}} - {{race.dateFrom | date: "dd MMM yyyy"}}</h6>
         <mat-card-actions>
-          <a mat-raised-button color="primary" href="{{race.url}}" target="_blank" *ngIf="race.url != null">Website</a>
+          <a mat-raised-button color="primary" href="{{race.url}}" target="_blank" *ngIf="race.url != null" [innerHTML]="'race.website' | translate"></a>
         </mat-card-actions>
       </mat-card-content>
     </mat-card>
@@ -35,7 +35,7 @@
     <div class="fxFlex">
       <!-- Message to show when there aren't any sessions. -->
       <mat-card *ngIf="race.sessions == null || race.sessions.length == 0" class="session-result">
-        <h5>There are no sessions (yet).</h5>
+        <h5 [translate]="'generic.noSessions'"></h5>
       </mat-card>
 
       <!-- Show session results. -->
@@ -56,9 +56,9 @@
             </div>
             <div class="half button-more text-right">
               <a [routerLink]="['/', 'championship', championshipId, 'race', race.id, 'session', session.id]"
-                mat-raised-button ripple color="primary" *ngIf="session.results.length > 0">View results</a>
-              <a mat-raised-button ripple color="primary" class="disabled" *ngIf="session.results.length === 0">View
-                results</a>
+                mat-raised-button ripple color="primary" *ngIf="session.results.length > 0" [innerHTML]="'generic.viewResults' | translate"></a>
+              <a mat-raised-button ripple color="primary" class="disabled" *ngIf="session.results.length === 0"
+                [innerHTML]="'generic.viewResults' | translate"></a>
             </div>
           </div>
         </mat-card>

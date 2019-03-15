@@ -3,8 +3,7 @@
 .about-text-wrapper {
   flex-direction: column;
 
-  a {
-    color: $dodger-blue;
+  /deep/a {
     text-decoration: none;
 
     &:hover {

@@ -22,14 +22,15 @@
     <mat-card class="race">
       <!-- Message to show when there are no sessions. -->
       <div *ngIf="championship.lastResult == null || championship.lastResult.sessions.length == 0">
-        <h3>Last session result</h3>
-        <h5>There hasn't been a session yet.</h5>
+        <h3 [translate]="'championship.lastSessionResult'"></h3>
+        <h5 [translate]="'championship.noSessions'"></h5>
       </div>
 
       <!-- Top 3 results from last session. -->
       <div *ngIf="championship.lastResult != null && championship.lastResult.sessions.length > 0">
         <h3>
-          Last session result ({{championship.lastResult.sessions[0].sessionType.toString() | lowercase }})
+          {{'championship.lastSessionResult' | translate}}
+          ({{championship.lastResult.sessions[0].sessionType.toString() | lowercase }})
           <h5 class="inline">{{championship.lastResult.name}}</h5>
         </h3>
 
@@ -37,7 +38,7 @@
 
           <!-- Position column. -->
           <ng-container matColumnDef="position">
-            <mat-header-cell *matHeaderCellDef><abbr title="Position">Pos</abbr></mat-header-cell>
+            <mat-header-cell *matHeaderCellDef [innerHTML]="'table.position' | translate"></mat-header-cell>
             <mat-cell *matCellDef="let row">
               <span>{{row.position}}</span>
               <i *ngIf="row.position === 1" class="fa fa-trophy gold"></i>
@@ -48,7 +49,7 @@
 
           <!-- Name column. -->
           <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef>Driver</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef [translate]="'table.driver'"></mat-header-cell>
             <mat-cell *matCellDef="let row">
               <span>{{row.driver}}</span>
             </mat-cell>
@@ -57,8 +58,8 @@
           <!-- Time column. -->
           <ng-container matColumnDef="time">
             <mat-header-cell *matHeaderCellDef>
-              <span *ngIf="championship.lastResult.sessions[0].sessionType === 'Race'">Time</span>
-              <span *ngIf="championship.lastResult.sessions[0].sessionType !== 'Race'">Fastest lap</span>
+              <span *ngIf="championship.lastResult.sessions[0].sessionType === 'Race'" [translate]="'table.time'"></span>
+              <span *ngIf="championship.lastResult.sessions[0].sessionType !== 'Race'" [translate]="'table.fastestLap'"></span>
             </mat-header-cell>
             <mat-cell *matCellDef="let row">
               <span *ngIf="(championship.lastResult.sessions[0].sessionType !== 'Race' || row.position === 1) && row.time">{{row.time}}</span>
@@ -68,7 +69,7 @@
 
           <!-- Laps column. -->
           <ng-container matColumnDef="laps">
-            <mat-header-cell *matHeaderCellDef>Laps</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef [translate]="'table.laps'">Laps</mat-header-cell>
             <mat-cell *matCellDef="let row">
               <span>{{row.laps}}</span>
             </mat-cell>
@@ -82,24 +83,21 @@
         </mat-table>
 
         <mat-card-actions>
-          <a mat-raised-button ripple color="primary" [routerLink]="['/', 'championship', championship.id, 'race', championship.lastResult.id]">Go
-            to race</a>
+          <a mat-raised-button ripple color="primary" [routerLink]="['/', 'championship', championship.id, 'race', championship.lastResult.id]"
+            [innerHTML]="'generic.goToRace' | translate"></a>
 
-          <a mat-raised-button ripple color="primary" [routerLink]="['/', 'championship', championship.id, 'races']">View
-            all races</a>
+          <a mat-raised-button ripple color="primary" [routerLink]="['/', 'championship', championship.id, 'races']"
+            [innerHTML]="'generic.allRaces' | translate"></a>
         </mat-card-actions>
       </div>
     </mat-card>
 
     <mat-card class="standings">
       <h3>
-        Current standings (top 3)
+        {{'championship.currentStandings' | translate}}
         <h5 class="inline">
           <!-- Message to show when there are no standings. -->
-          <span *ngIf="championship.standings == null || championship.standings.length == 0">
-            There are no standings*
-            <small>* because there hasn't been a race yet.</small>
-          </span>
+          <span *ngIf="championship.standings == null || championship.standings.length == 0" [translate]="'championship.noStandings'"></span>
         </h5>
       </h3>
 
@@ -109,7 +107,7 @@
 
           <!-- Position column. -->
           <ng-container matColumnDef="position">
-            <mat-header-cell *matHeaderCellDef><abbr title="Position">Pos</abbr></mat-header-cell>
+            <mat-header-cell *matHeaderCellDef [innerHTML]="'table.position' | translate"></mat-header-cell>
             <mat-cell *matCellDef="let row">
               <span>{{row.position}}</span>
               <i *ngIf="row.position === 1" class="fa fa-trophy gold"></i>
@@ -120,7 +118,7 @@
 
           <!-- Name column. -->
           <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef>Driver</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef [translate]="'table.driver'"></mat-header-cell>
             <mat-cell *matCellDef="let row">
               <span>{{row.name}}</span>
             </mat-cell>
@@ -128,7 +126,7 @@
 
           <!-- Points column. -->
           <ng-container matColumnDef="points">
-            <mat-header-cell *matHeaderCellDef><abbr title="Points">Pts</abbr></mat-header-cell>
+            <mat-header-cell *matHeaderCellDef [innerHTML]="'table.points' | translate"></mat-header-cell>
             <mat-cell *matCellDef="let row">
               <span>{{row.points}}</span>
             </mat-cell>
@@ -142,8 +140,8 @@
         </mat-table>
 
         <mat-card-actions>
-          <a mat-raised-button ripple color="primary" [routerLink]="['/', 'championship', championship.id, 'standings']">Go
-            to standings</a>
+          <a mat-raised-button ripple color="primary" [routerLink]="['/', 'championship', championship.id, 'standings']"
+            [innerHTML]="'championship.goToStandings' | translate"></a>
         </mat-card-actions>
       </div>
     </mat-card>

@@ -1,0 +1,71 @@
+{
+  "generic": {
+    "championship": "Championship",
+    "championships": "Championships",
+    "driver": "Driver",
+    "drivers": "Drivers",
+    "race": "Race",
+    "races": "Races",
+    "noRaces": "No races yet.",
+    "goToRace": "Go to race",
+    "allRaces": "View all races",
+    "session": "Session",
+    "sessions": "Sessions",
+    "noSessions": "There are no sessions yet.",
+    "viewChampionship": "View championship",
+    "viewResults": "View results"
+  },
+  "lang": {
+    "english": "English",
+    "dutch": "Dutch"
+  },
+  "table": {
+    "position": "<abbr title=\"Position\">Pos</abbr>",
+    "driver": "Driver",
+    "time": "Time",
+    "difference": "Difference",
+    "fastestLap": "Fastest lap",
+    "laps": "Laps",
+    "lapOrMore": "Lap(s)",
+    "points": "<abbr title=\"Points\">Pts</abbr>"
+  },
+  "home": {
+    "title": "Home",
+    "description": "Welcome to Trackr, a platform to manage and view race results."
+  },
+  "about": {
+    "title": "About",
+    "description": "Trackr is an application that allows users to add races, sessions and results. It also tracks the standings, based on the point system used.",
+    "developedBy": "Trackr is developed by <a href=\"http://twitter.com/dickw0lff\" _target=\"blank\">Dick Wolff</a>.",
+    "reportBugs": "Found a bug? Report it on <a href=\"https://github.com/TrackrApp/Trackr\" _target=\"blank\"><i class=\"fab fa-github\"></i>Github</a>!"
+  },
+  "search": {
+    "title": "Search",
+    "hint": "Type your search query..",
+    "hintDetail": "Start typing to search, e.g. OTKC",
+    "noResults": "No championships found for this query."
+  },
+  "championship": {
+    "lastSessionResult": "Last session result",
+    "noSessions": "There hasn't been a session yet.",
+    "currentStandings": "Current standings (top 3)",
+    "noStandings": "There are no standings*<small>* because there hasn't been a race yet.</small></span>",
+    "goToStandings": "Go to standings"
+  },
+  "races": {
+    "title": "Races",
+    "description": "View the races, and their individual results.",
+    "championshipNoRaces": "This championship has no races."
+  },
+  "race": {
+    "website": "Website"
+  },
+  "session": {
+    "title": "Session results",
+    "description": "The table below shows the results of the session."
+  },
+  "standings": {
+    "title": "Standings",
+    "description": "The table below shows the current standings of the championship."
+  }
+}
