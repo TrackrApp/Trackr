@@ -19,3 +19,6 @@ As a registered user you can:
 The following features will not be part of the first release, but will be implemented after.
 
 - Private championships (being able to password protect them).
+
+## Request a feature
+If you have ideas or suggestions on how to improve Trackr, please create an [issue on GitHub](https://github.com/TrackrApp/Trackr/issues/new) and use the tag 'feature request'.
