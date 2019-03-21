@@ -10,10 +10,10 @@ As an anonymous user you can:
 - [x] View championships, races, sessions and results.
 
 As a registered user you can:
-- [] Create championships.
-- [] Add races to a championship.
-- [] Add sessions to a race.
-- [] Add results to a session.
+- [ ] Create championships.
+- [ ] Add races to a championship.
+- [ ] Add sessions to a race.
+- [ ] Add results to a session.
 
 ## Features to be implemented in the future
 The following features will not be part of the first release, but will be implemented after.
