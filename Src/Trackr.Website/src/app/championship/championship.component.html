@@ -63,7 +63,8 @@
             </mat-header-cell>
             <mat-cell *matCellDef="let row">
               <span *ngIf="(championship.lastResult.sessions[0].sessionType !== 'Race' || row.position === 1) && row.time">{{row.time}}</span>
-              <span *ngIf="championship.lastResult.sessions[0].sessionType === 'Race' && row.difference">{{row.difference}}</span>
+              <span *ngIf="championship.lastResult.sessions[0].sessionType === 'Race' && row.difference">+
+                {{row.difference}}</span>
             </mat-cell>
           </ng-container>
 
