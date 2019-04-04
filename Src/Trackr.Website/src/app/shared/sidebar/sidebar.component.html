@@ -17,14 +17,14 @@
 
   <!-- Championship/id. [only shown when a championship is opened] -->
   <mat-list-item routerLinkActive="selected" *ngIf="router.url.indexOf('championship') > -1">
-    <a class="root-item">
+    <a class="root-item" (click)="toggleMenuItem()">
       <i class="fas fa-trophy"></i>
       <span [translate]="'menu.championship.root'"></span>
       <span class="fxFlex"></span>
-      <i class="dropdown fas fa-angle-down"></i>
+      <i class="dropdown fas fa-angle-up" [ngClass]="!isChampionshipMenuOpened ? 'rotate' : ''"></i>
     </a>
 
-    <mat-nav-list class="sub-item-children">
+    <mat-nav-list class="sub-item-children" [ngClass]="!isChampionshipMenuOpened ? 'hidden' : ''">
 
       <!-- Overview. -->
       <mat-list-item routerLinkActive="selected">

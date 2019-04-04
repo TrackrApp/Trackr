@@ -7,7 +7,13 @@
   justify-content: space-between;
 }
 
+// Prevent any text from the sidebar to be selected.
+* {
+  user-select: none;
+}
+
 .mat-nav-list {
+
   .mat-list-item {
     a {
       height: 45px;
@@ -22,6 +28,14 @@
 
       .fas {
         margin-right: 8px;
+      }
+
+      .dropdown {
+        transition: .25s ease;
+
+        &.rotate {
+          transform: rotate(-180deg);
+        }
       }
     }
 
@@ -39,6 +53,13 @@
 
     .sub-item-children, .sub-sub-item-children {
       margin-top: -15px;
+      max-height: 1000px;
+      overflow-y: hidden;
+      transition: max-height .25s ease;
+
+      &.hidden {
+        max-height: 0;
+      }
 
       a {
         padding-left: 20px;

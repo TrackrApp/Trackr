@@ -12,6 +12,7 @@ export class SidebarComponent implements OnInit {
   private championshipId: number;
   private raceId: number;
 
+  public isChampionshipMenuOpened = true;
   public version: string = this.appVersionService.getVersion();
 
   constructor(
@@ -34,5 +35,9 @@ export class SidebarComponent implements OnInit {
           this.raceId = params["rId"];
         });
       });
+  }
+
+  public toggleMenuItem(menuItem: any): void {
+    this.isChampionshipMenuOpened = !this.isChampionshipMenuOpened;
   }
 }
